@@ -51,14 +51,11 @@ export default function About() {
           <div>
             <span className="section-label">About Creavie Marketing</span>
             <h1 className="section-title">A globally trusted force,<br /><span style={{ color: 'var(--secondary)' }}>led from Ireland.</span></h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Founded and led by <strong style={{ color: 'var(--text-dark)' }}>Dr. Gerald</strong>, Creavie Marketing is headquartered in Ireland with regional offices across Canada, Australia, the United States, and New Zealand.
-            </p>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              We work in customer involvement, entertainment and satisfaction. We serve commercial, government and VIP clients worldwide, and we take every project seriously.
+            <p className="statement-premium" style={{ marginBottom: '2.5rem' }}>
+              Creavie Marketing is a specialized digital team delivering <span className="fade">premium marketing, brand identity, and scalable interactive web applications for commercial and VIP clients worldwide.</span>
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '3rem' }}>
-              With over <strong style={{ color: 'var(--text-dark)' }}>500 professionals globally</strong> and a portfolio exceeding <strong style={{ color: 'var(--text-dark)' }}>10,000 completed projects</strong>, we are built for the world's most demanding briefs.
+              Founded and led by <strong style={{ color: 'var(--text-dark)' }}>Dr. Gerald</strong>, our team of over <strong style={{ color: 'var(--text-dark)' }}>500 professionals globally</strong> has completed more than <strong style={{ color: 'var(--text-dark)' }}>10,000 projects</strong> across Ireland, Canada, Australia, the USA, and New Zealand.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <Link href="/contact" className="btn-primary">
