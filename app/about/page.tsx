@@ -108,8 +108,8 @@ export default function About() {
                 <span style={{
                   fontFamily: 'var(--font-title)', fontSize: '0.7rem', fontWeight: 700,
                   padding: '0.25rem 0.7rem', borderRadius: '100px',
-                  background: loc.isHQ ? 'var(--secondary)' : 'rgba(12,12,20,0.05)',
-                  color: loc.isHQ ? '#0c0c14' : 'var(--text-muted)',
+                  background: loc.isHQ ? 'var(--secondary)' : 'rgba(255,255,255,0.05)',
+                  color: loc.isHQ ? '#000000' : 'var(--text-muted)',
                 }}>{loc.role}</span>
               </div>
             ))}

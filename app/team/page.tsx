@@ -66,7 +66,7 @@ export default function Team() {
   useEffect(() => { setLoaded(true); }, []);
 
   const deptColors: Record<string, string> = {
-    Leadership: '#0c0c14',
+    Leadership: '#311066',
     HR: '#2563eb',
     Marketing: '#90eb00',
     Logistics: '#f59e0b',
@@ -135,7 +135,7 @@ export default function Team() {
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = 'rgba(12,12,20,0.06)';
+                el.style.borderColor = 'rgba(255,255,255,0.07)';
                 el.style.transform = 'translateX(0)';
               }}
             >

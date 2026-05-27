@@ -248,7 +248,7 @@ export default function Home() {
                     fontWeight: 700,
                     padding: '0.5rem 1.1rem',
                     borderRadius: '100px',
-                    background: 'rgba(12,12,20,0.04)',
+                    background: 'rgba(255, 255, 255, 0.05)',
                     border: 'var(--border-light)',
                     color: 'var(--text-dark)',
                   }}>{s}</span>
@@ -272,7 +272,7 @@ export default function Home() {
               <div style={{
                 display: 'inline-flex',
                 gap: '0.5rem',
-                background: 'rgba(12, 12, 20, 0.03)',
+                background: 'rgba(255, 255, 255, 0.04)',
                 border: 'var(--border-light)',
                 padding: '0.4rem',
                 borderRadius: '100px',
@@ -285,11 +285,11 @@ export default function Home() {
                     style={{
                       border: 'none',
                       background: activeTab === f ? 'var(--secondary)' : 'transparent',
-                      color: 'var(--text-dark)',
+                      color: activeTab === f ? '#000000' : 'var(--text-muted)',
                       padding: '0.5rem 1.2rem',
                       borderRadius: '100px',
                       fontFamily: 'var(--font-title)',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: '0.85rem',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',

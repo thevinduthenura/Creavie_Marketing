@@ -111,7 +111,7 @@ export default function Services() {
                 const el = e.currentTarget as HTMLDivElement;
                 el.style.transform = 'translateY(0)';
                 el.style.boxShadow = 'none';
-                el.style.borderColor = 'rgba(12,12,20,0.06)';
+                el.style.borderColor = 'rgba(255,255,255,0.07)';
               }}
             >
               <div style={{
@@ -128,7 +128,7 @@ export default function Services() {
                   <span key={tag} style={{
                     fontFamily: 'var(--font-title)', fontSize: '0.75rem', fontWeight: 700,
                     padding: '0.3rem 0.8rem', borderRadius: '100px',
-                    background: 'rgba(12,12,20,0.04)', border: 'var(--border-light)',
+                    background: 'rgba(255,255,255,0.05)', border: 'var(--border-light)',
                   }}>{tag}</span>
                 ))}
               </div>
