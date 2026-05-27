@@ -139,7 +139,7 @@ export default function NavBar() {
           width: '72%',
           maxWidth: '320px',
           height: '100vh',
-          background: 'rgba(255,255,255,0.97)',
+          background: 'rgba(8,8,16,0.98)',
           backdropFilter: 'blur(20px)',
           display: 'flex',
           flexDirection: 'column',

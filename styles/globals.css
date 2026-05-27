@@ -1,23 +1,23 @@
-/* ═══ DESIGN SYSTEM & VARIABLES (MINIMALIST LIME & SOFT LIGHT) ═══ */
+/* ═══ DESIGN SYSTEM & VARIABLES (NFORCE DARK MODE) ═══ */
 :root {
-  --bg-light: #f6f6fa;
-  --bg-white: #ffffff;
-  --bg-dark: #0c0c14;
-  --bg-dark-card: #13131f;
-  
-  --primary: #0c0c14;         /* Charcoal dark */
-  --secondary: #90eb00;       /* Premium Lime green */
-  --secondary-glow: rgba(144, 235, 0, 0.3);
-  
-  --text-dark: #0c0c14;
-  --text-muted: #646473;
+  --bg-light: #080810;
+  --bg-white: #0e0e1a;
+  --bg-dark: #000000;
+  --bg-dark-card: #111120;
+
+  --primary: #ffffff;
+  --secondary: #90eb00;
+  --secondary-glow: rgba(144, 235, 0, 0.25);
+
+  --text-dark: #ffffff;
+  --text-muted: #8888aa;
   --text-light: #ffffff;
-  
+
   --font-title: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
-  
-  --border-light: 1px solid rgba(12, 12, 20, 0.06);
-  --border-dark: 1px solid rgba(255, 255, 255, 0.08);
+
+  --border-light: 1px solid rgba(255, 255, 255, 0.07);
+  --border-dark: 1px solid rgba(255, 255, 255, 0.07);
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -29,7 +29,7 @@
 }
 
 html, body {
-  background-color: var(--bg-light);
+  background-color: #080810;
   color: var(--text-dark);
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -42,14 +42,14 @@ body::-webkit-scrollbar {
   width: 6px;
 }
 body::-webkit-scrollbar-track {
-  background: var(--bg-light);
+  background: #080810;
 }
 body::-webkit-scrollbar-thumb {
-  background: rgba(12, 12, 20, 0.1);
+  background: rgba(144, 235, 0, 0.2);
   border-radius: 4px;
 }
 body::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: var(--secondary);
 }
 
 a {
@@ -205,16 +205,16 @@ a {
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(246, 246, 250, 0.9);
+  background: rgba(8, 8, 16, 0.85);
   backdrop-filter: blur(20px);
-  border-bottom: var(--border-light);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: var(--transition-smooth);
 }
 
 #navbar.scrolled {
   padding: 0.7rem 0 !important;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  background: rgba(8, 8, 16, 0.97);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .nav-container {
@@ -298,7 +298,7 @@ a {
   position: relative;
   padding-top: 100px;
   overflow: hidden;
-  background: #ffffff;
+  background: #080810;
 }
 
 .hero-container {
@@ -406,11 +406,11 @@ a {
 }
 
 .white-card {
-  background: var(--bg-white);
-  border: var(--border-light);
+  background: #111120;
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 28px;
   padding: 2.2rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
 .visual-stats-row {
@@ -514,9 +514,9 @@ a {
 /* ═══ MARQUEE TICKER ═══ */
 .marquee-wrapper {
   overflow: hidden;
-  background: var(--bg-white);
-  border-top: var(--border-light);
-  border-bottom: var(--border-light);
+  background: #0e0e1a;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 2.2rem 0;
   position: relative;
   z-index: 2;
@@ -545,7 +545,7 @@ a {
 /* ═══ OUT OF THE BOX SERVICES BLOCK ═══ */
 .services-teaser-block {
   padding: 8rem 0;
-  background: var(--bg-light);
+  background: #080810;
 }
 
 .teaser-grid {
@@ -767,7 +767,7 @@ a {
 /* ═══ INTERACTIVE ACCORDION SERVICES (FAQ STYLE) ═══ */
 .faq-accordion-block {
   padding: 8rem 0;
-  background: var(--bg-white);
+  background: #0e0e1a;
 }
 
 .faq-grid {
@@ -829,7 +829,7 @@ a {
 /* ═══ DYNAMIC BLOG / ARTICLES GRID ═══ */
 .articles-block {
   padding: 8rem 0;
-  background: var(--bg-light);
+  background: #080810;
 }
 
 .articles-grid {
@@ -839,8 +839,8 @@ a {
 }
 
 .article-card {
-  background: var(--bg-white);
-  border: var(--border-light);
+  background: #111120;
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 24px;
   padding: 2.2rem;
   display: flex;
@@ -852,7 +852,8 @@ a {
 
 .article-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.03);
+  box-shadow: 0 12px 40px rgba(144,235,0,0.08);
+  border-color: rgba(144,235,0,0.3);
 }
 
 .article-tag {
@@ -942,8 +943,8 @@ a {
 
 /* ═══ FOOTER OVERHAUL ═══ */
 #footer {
-  background: var(--bg-white);
-  border-top: var(--border-light);
+  background: #0e0e1a;
+  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 5rem 0 3rem 0;
   color: var(--text-dark);
 }
