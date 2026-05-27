@@ -244,6 +244,65 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      {/* ── DEPARTMENTAL CONTACTS DIRECTORY ── */}
+      <div className="container" style={{ paddingBottom: '8rem', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '5rem', marginTop: '4rem' }}>
+        <span className="section-label">Departmental Directory</span>
+        <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem,4vw,2.4rem)', marginBottom: '3rem', color: '#fff' }}>
+          Connect with the right desk
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
+          {[
+            { dept: 'Gerald', role: 'Executive & Partnerships', email: 'gerald@creativemarketing.com' },
+            { dept: 'Legal Desk', role: 'Compliance & Contracts', email: 'legal@creativemarketing.com' },
+            { dept: 'HR & Careers', role: 'Recruitment & Culture', email: 'hr@creativemarketing.com' },
+            { dept: 'Shaki', role: 'Creative Director', email: 'shaki@creativemarketing.com' },
+            { dept: 'General Desk', role: 'Info & Global Press', email: 'info@creativemarketing.com' },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="white-card"
+              style={{
+                padding: '2rem',
+                border: '1px solid rgba(144, 235, 0, 0.12)',
+                background: 'rgba(13, 13, 24, 0.4)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = 'var(--secondary)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'none';
+                e.currentTarget.style.borderColor = 'rgba(144, 235, 0, 0.12)';
+              }}
+            >
+              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '0.2rem' }}>{item.dept}</h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600, marginBottom: '1.5rem' }}>{item.role}</p>
+              <a
+                href={`mailto:${item.email}`}
+                style={{
+                  color: 'var(--secondary)',
+                  textDecoration: 'none',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  fontFamily: 'var(--font-title)',
+                  transition: 'all 0.3s ease',
+                  wordBreak: 'break-all',
+                }}
+              >
+                <span>{item.email}</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
