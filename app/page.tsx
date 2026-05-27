@@ -8,6 +8,10 @@ export default function Home() {
   const [counts, setCounts] = useState({ projects: 0, retention: 0, brands: 0 });
   const [activeTab, setActiveTab] = useState('All Work');
 
+  // ROI Estimator States
+  const [adSpend, setAdSpend] = useState(5000);
+  const [campaignGoal, setCampaignGoal] = useState('leads');
+
   const portfolio = [
     { category: 'Digital Branding', tag: 'Smart Tech', title: 'Dot Pad', img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800', slug: 'dot-pad' },
     { category: 'Marketing', tag: 'Social Campaign', title: 'Penny Price Packs', img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800', slug: 'penny-price-packs' },
@@ -344,6 +348,142 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ INTERACTIVE ROI ESTIMATOR ═══ */}
+      <section style={{ padding: '8rem 0', background: '#080810', borderTop: 'var(--border-light)', position: 'relative', overflow: 'hidden' }}>
+        {/* Background glow orbs */}
+        <div style={{
+          position: 'absolute', top: '10%', right: '-10%', width: '400px', height: '400px',
+          background: 'rgba(144, 235, 0, 0.03)', borderRadius: '50%', filter: 'blur(120px)', zIndex: 1
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '10%', left: '-10%', width: '450px', height: '450px',
+          background: 'rgba(144, 235, 0, 0.02)', borderRadius: '50%', filter: 'blur(120px)', zIndex: 1
+        }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'center' }}>
+            
+            {/* Left Column */}
+            <div>
+              <span className="section-label">Growth Simulator</span>
+              <h2 className="section-title" style={{ fontSize: 'clamp(2rem,4.5vw,2.8rem)', color: '#fff', marginBottom: '1.5rem' }}>
+                Calculate your<br />digital impact
+              </h2>
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+                Slide the budget control to simulate reach, impressions, and projected return on investment based on our current campaign metrics.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <Link href="/services" className="btn-primary">
+                  <span>Explore Services</span>
+                </Link>
+                <Link href="/contact" className="btn-ghost">
+                  <span>Start Free Trial</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Calculator Box */}
+            <div className="white-card" style={{ padding: '3rem', border: '1px solid rgba(144, 235, 0, 0.25)', background: 'rgba(13, 13, 24, 0.65)', backdropFilter: 'blur(20px)' }}>
+              
+              {/* Goal tabs */}
+              <div style={{ marginBottom: '2rem' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, marginBottom: '0.8rem', fontFamily: 'var(--font-title)' }}>Primary Campaign Focus</label>
+                <div style={{ display: 'flex', gap: '0.5rem', background: 'rgba(255,255,255,0.03)', padding: '0.3rem', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  {[
+                    { id: 'leads', label: 'Lead Gen' },
+                    { id: 'ecomm', label: 'E-Commerce' },
+                    { id: 'awareness', label: 'Brand Reach' }
+                  ].map(g => (
+                    <button
+                      key={g.id}
+                      onClick={() => setCampaignGoal(g.id)}
+                      style={{
+                        flex: 1,
+                        border: 'none',
+                        background: campaignGoal === g.id ? 'var(--secondary)' : 'transparent',
+                        color: campaignGoal === g.id ? '#000000' : 'var(--text-muted)',
+                        padding: '0.6rem 1rem',
+                        borderRadius: '100px',
+                        cursor: 'pointer',
+                        fontWeight: 700,
+                        fontSize: '0.82rem',
+                        fontFamily: 'var(--font-title)',
+                        transition: 'all 0.3s ease',
+                      }}
+                    >
+                      {g.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Slider for monthly budget */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
+                  <label style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, fontFamily: 'var(--font-title)' }}>Monthly Ad Budget</label>
+                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--secondary)' }}>
+                    ${adSpend.toLocaleString()}
+                  </span>
+                </div>
+                <input
+                  type="range"
+                  min="1000"
+                  max="50000"
+                  step="1000"
+                  value={adSpend}
+                  onChange={(e) => setAdSpend(Number(e.target.value))}
+                  style={{
+                    width: '100%',
+                    height: '6px',
+                    borderRadius: '100px',
+                    background: 'rgba(255,255,255,0.1)',
+                    outline: 'none',
+                    WebkitAppearance: 'none',
+                    cursor: 'pointer',
+                  }}
+                  className="slider-input"
+                />
+              </div>
+
+              {/* Outputs grid */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2rem', marginBottom: '2rem' }}>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Est. Impressions</span>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-title)' }}>
+                    {(adSpend * 12).toLocaleString()}+
+                  </div>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Est. Yield ROI</span>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--secondary)', fontFamily: 'var(--font-title)' }}>
+                    {campaignGoal === 'leads' ? '4.8x' : campaignGoal === 'ecomm' ? '5.4x' : '6.2x'}
+                  </div>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Projected Conversions</span>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-title)' }}>
+                    {Math.round(adSpend * (campaignGoal === 'leads' ? 0.22 : campaignGoal === 'ecomm' ? 0.35 : 0.65)).toLocaleString()}
+                  </div>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Projected Return</span>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-title)' }}>
+                    ${(adSpend * (campaignGoal === 'leads' ? 4.8 : campaignGoal === 'ecomm' ? 5.4 : 6.2)).toLocaleString()}
+                  </div>
+                </div>
+              </div>
+
+              {/* Call to action */}
+              <Link href="/contact" className="btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--secondary)', color: '#0c0c14', border: 'none' }}>
+                <span>Secure This Growth Yield</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </Link>
+            </div>
+
           </div>
         </div>
       </section>
