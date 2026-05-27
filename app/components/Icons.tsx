@@ -107,7 +107,10 @@ export const IconQuote = ({ size = 32, color = defaults.color }: IconProps) => (
 
 export const IconLogoMark = ({ size = 20, color = '#90eb00' }: IconProps) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill={color} />
+    <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="2" />
+    <path d="M16 12a4 4 0 0 1-8 0" stroke={color} fill="none" strokeWidth="2.5" />
+    <path d="M8 12a4 4 0 0 1 4-4" stroke={color} fill="none" strokeWidth="2.5" />
+    <path d="M12 8a4 4 0 0 1 4 4" stroke={color} fill="none" strokeWidth="2.5" />
   </svg>
 );
 

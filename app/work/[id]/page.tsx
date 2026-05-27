@@ -37,7 +37,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     desc: 'Tactile graphics device for visually impaired users. We designed the fluid interactive software, developer tools, and global launch branding.',
     client: 'Dot Inc. Korea',
-    agency: 'Creavie Marketing x Plan.Net',
+    agency: 'Creative Marketing x Plan.Net',
     disciplines: ['UI/UX Software Design', 'Tactile Vector Engine', 'SDK Developer Tools', 'Global Campaign Strategy'],
     metrics: [
       { value: '140+', label: 'Global Patents Registered' },
@@ -66,7 +66,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     desc: 'Rewriting everyday product labels to detail the true social and economic cost of inflation, triggering global media discussions.',
     client: 'PENNY Supermarkets',
-    agency: 'Creavie Marketing',
+    agency: 'Creative Marketing',
     disciplines: ['Product Packaging Redesign', 'Point-of-Sale Experiential', 'Integrated Media Campaign', 'Social Impact Strategy'],
     metrics: [
       { value: '3.8M', label: 'In-Store Engagements' },
@@ -95,7 +95,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     desc: 'Immersive data platform powered by pet wearable biosensors, automatically broadcasting hyper-local health safety alerts.',
     client: 'PetPace Safety',
-    agency: 'Creavie Marketing x Mediaplus',
+    agency: 'Creative Marketing x Mediaplus',
     disciplines: ['IoT Sensor Integration', 'Real-Time Mapping Dashboard', 'Automatic Ad Broadcast Engine', 'B2B Partner Portal'],
     metrics: [
       { value: '250K', label: 'Active Wearable Nodes' },
@@ -124,7 +124,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     desc: 'Creating the world’s first fashion wool line produced by gay sheep, advocating for LGBTQ+ visibility and diversity in agriculture.',
     client: 'Schäferei Stücke Foundation',
-    agency: 'Creavie Marketing',
+    agency: 'Creative Marketing',
     disciplines: ['Brand Design & Storytelling', 'E-commerce Platform', 'High-Fashion Creative Direction', 'Public Relations Strategy'],
     metrics: [
       { value: '100%', label: 'Wool Inventory Sold Out' },
@@ -153,7 +153,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     desc: 'A virtual interactive timeline celebrating 100 years of aviation. Users explored classic airplanes in realistic interactive 3D.',
     client: 'Lufthansa Group',
-    agency: 'Creavie Marketing x Mediaplus',
+    agency: 'Creative Marketing x Mediaplus',
     disciplines: ['3D Web Graphics (WebGL)', 'Bespoke UI Soundscapes', 'Historical Archive Digitalization', 'Global Campaign Rollout'],
     metrics: [
       { value: '5.2M', label: 'Interactive Sessions' },
@@ -182,7 +182,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     desc: 'Interactive online puzzle experience built for Netflix, allowing millions of global fans to crack heists live.',
     client: 'Netflix International',
-    agency: 'Creavie Marketing',
+    agency: 'Creative Marketing',
     disciplines: ['Interactive Web Game', 'Real-Time Multiplayer Logic', 'Interactive Sound Design', 'Bespoke Cyber Graphics'],
     metrics: [
       { value: '18M', label: 'Active Game Plays' },

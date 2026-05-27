@@ -53,7 +53,7 @@ export default function NavBar() {
         <div className="nav-container">
           <Link href="/" className="nav-logo" style={{ fontSize: '1.15rem' }}>
             <IconLogoMark size={18} />
-            <span className="logo-text" style={{ whiteSpace: 'nowrap' }}>Creavie Marketing</span>
+            <span className="logo-text" style={{ whiteSpace: 'nowrap' }}>Creative Marketing</span>
           </Link>
 
           <ul className="nav-links" style={{ display: 'flex', alignItems: 'center' }}>

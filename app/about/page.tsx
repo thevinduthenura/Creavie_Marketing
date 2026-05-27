@@ -13,7 +13,7 @@ const locations = [
 
 const articles = [
   { tag: 'Customer Experience', title: 'Keeping Clients at the Center of Every Decision', desc: 'Our customer-first philosophy ensures every campaign creates genuine value and lasting satisfaction for clients worldwide.', date: 'May 2024' },
-  { tag: 'Government Projects', title: 'Excellence in Public Sector & VIP Engagements', desc: 'Creavie Marketing has an established track record delivering premium, confidential projects for government bodies and VIP clients.', date: 'Apr 2024' },
+  { tag: 'Government Projects', title: 'Excellence in Public Sector & VIP Engagements', desc: 'Creative Marketing has an established track record delivering premium, confidential projects for government bodies and VIP clients.', date: 'Apr 2024' },
   { tag: 'Global Presence', title: 'How We Scaled to 500+ Professionals Across 5 Countries', desc: 'From our Ireland HQ to offices in Canada, Australia, the USA and New Zealand. Here is how we built a globally trusted team.', date: 'Mar 2024' },
 ];
 
@@ -49,10 +49,10 @@ export default function About() {
           transition: 'all 1s cubic-bezier(0.16,1,0.3,1)',
         }}>
           <div>
-            <span className="section-label">About Creavie Marketing</span>
+            <span className="section-label">About Creative Marketing</span>
             <h1 className="section-title">A globally trusted force,<br /><span style={{ color: 'var(--secondary)' }}>led from Ireland.</span></h1>
             <p className="statement-premium" style={{ marginBottom: '2.5rem' }}>
-              Creavie Marketing is a specialized digital team delivering <span className="fade">premium marketing, brand identity, and scalable interactive web applications for commercial and VIP clients worldwide.</span>
+              Creative Marketing is a specialized digital team delivering <span className="fade">premium marketing, brand identity, and scalable interactive web applications for commercial and VIP clients worldwide.</span>
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '3rem' }}>
               Founded and led by <strong style={{ color: 'var(--text-dark)' }}>Dr. Gerald</strong>, our team of over <strong style={{ color: 'var(--text-dark)' }}>500 professionals globally</strong> has completed more than <strong style={{ color: 'var(--text-dark)' }}>10,000 projects</strong> across Ireland, Canada, Australia, the USA, and New Zealand.
@@ -120,7 +120,7 @@ export default function About() {
           <div style={{ marginBottom: '3.5rem' }}>
             <span className="section-label">Our Expertise</span>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1.5rem' }}>
-              <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.5rem)', marginBottom: 0 }}>What sets Creavie<br />Marketing apart</h2>
+              <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem,3.5vw,2.5rem)', marginBottom: 0 }}>What sets Creative<br />Marketing apart</h2>
               <Link href="/services" className="btn-ghost"><span>All Services</span></Link>
             </div>
           </div>

@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link href="/" className="nav-logo" style={{ marginBottom: '0', fontSize: '1.15rem' }}>
               <IconLogoMark size={18} />
-              <span className="logo-text">Creavie Marketing</span>
+              <span className="logo-text">Creative Marketing</span>
             </Link>
             <p>A forward-thinking marketing agency elevating brands through strategy, design & digital experience.</p>
             <div className="footer-socials">
@@ -55,7 +55,7 @@ export default function Footer() {
 
           <div className="footer-contact-info">
             <h4>Contact</h4>
-            <a href="mailto:hello@creaviemarketing.com">hello@creaviemarketing.com</a>
+            <a href="mailto:hello@creativemarketingtm.com">hello@creativemarketingtm.com</a>
             <p className="footer-addr" style={{ marginTop: '0.8rem' }}>
               <strong>Head Office</strong><br />
               Dublin, Ireland
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Creavie Marketing. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Creative Marketing. All rights reserved.</p>
         </div>
       </div>
     </footer>

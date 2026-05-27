@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { label: 'Email Us', value: 'hello@creaviemarketing.com', href: 'mailto:hello@creaviemarketing.com', icon: <IconMail size={20} color="var(--secondary)" strokeWidth={1.8} /> },
+    { label: 'Email Us', value: 'hello@creativemarketingtm.com', href: 'mailto:hello@creativemarketingtm.com', icon: <IconMail size={20} color="var(--secondary)" strokeWidth={1.8} /> },
     { label: 'Head Office', value: 'Dublin, Ireland', href: '#', icon: <IconMapPin size={20} color="var(--secondary)" strokeWidth={1.8} /> },
     { label: 'Global Offices', value: 'CA · AU · US · NZ', href: '/about', icon: <IconPhone size={20} color="var(--secondary)" strokeWidth={1.8} /> },
   ];
@@ -253,11 +253,11 @@ export default function Contact() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
           {[
-            { dept: 'Gerald', role: 'Executive & Partnerships', email: 'gerald@creativemarketing.com' },
-            { dept: 'Legal Desk', role: 'Compliance & Contracts', email: 'legal@creativemarketing.com' },
-            { dept: 'HR & Careers', role: 'Recruitment & Culture', email: 'hr@creativemarketing.com' },
-            { dept: 'Shaki', role: 'Creative Director', email: 'shaki@creativemarketing.com' },
-            { dept: 'General Desk', role: 'Info & Global Press', email: 'info@creativemarketing.com' },
+            { dept: 'Gerald', role: 'Executive & Partnerships', email: 'gerald@creativemarketingtm.com' },
+            { dept: 'Legal Desk', role: 'Compliance & Contracts', email: 'legal@creativemarketingtm.com' },
+            { dept: 'HR & Careers', role: 'Recruitment & Culture', email: 'hr@creativemarketingtm.com' },
+            { dept: 'Shaki', role: 'Creative Director', email: 'shaki@creativemarketingtm.com' },
+            { dept: 'General Desk', role: 'Info & Global Press', email: 'info@creativemarketingtm.com' },
           ].map((item, idx) => (
             <div
               key={idx}

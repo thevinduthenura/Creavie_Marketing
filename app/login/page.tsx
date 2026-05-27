@@ -27,7 +27,7 @@ export default function LoginPage() {
 
     setTimeout(() => {
       if (mode === 'admin') {
-        if (email === 'admin@creavie.com' && password === 'admin') {
+        if (email === 'admin@creativemarketingtm.com' && password === 'admin') {
           setMessage({ type: 'success', text: 'Welcome back Administrator. Decrypting telemetry HQ...' });
           setTimeout(() => {
             router.push('/admin');
@@ -128,11 +128,11 @@ export default function LoginPage() {
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.4rem', marginBottom: '0.4rem' }}>
             <IconLogoMark size={20} color="var(--secondary)" />
             <span style={{ fontSize: '1.25rem', fontWeight: 500, color: '#ffffff', letterSpacing: '-0.02em' }}>
-              Creavie
+              Creative
             </span>
           </div>
           <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
-            {mode === 'admin' ? 'Administrative HQ' : 'formerly Creavie Media'}
+            {mode === 'admin' ? 'Administrative HQ' : 'formerly Creative Media'}
           </span>
         </div>
 
@@ -299,7 +299,7 @@ export default function LoginPage() {
                 <input
                   type="email"
                   required
-                  placeholder={mode === 'admin' ? 'admin@creavie.com' : 'you@example.com'}
+                  placeholder={mode === 'admin' ? 'admin@creativemarketingtm.com' : 'you@example.com'}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={loading}
@@ -441,7 +441,7 @@ export default function LoginPage() {
                 cursor: 'pointer',
               }}
             />
-            <span>I do not wish to receive news and promotions from Creavie Marketing by email.</span>
+            <span>I do not wish to receive news and promotions from Creative Marketing by email.</span>
           </label>
         )}
 
@@ -457,7 +457,7 @@ export default function LoginPage() {
               width: '100%',
             }}
           >
-            By continuing, you agree to Creavie&apos;s{' '}
+            By continuing, you agree to Creative&apos;s{' '}
             <Link href="/terms" style={{ color: '#ffffff', fontWeight: 600, textDecoration: 'underline' }}>
               Terms of Use
             </Link>{' '}
@@ -487,7 +487,7 @@ export default function LoginPage() {
             {mode === 'admin' ? (
               <>
                 <strong style={{ color: '#ffffff' }}>Admin HQ credentials:</strong><br />
-                Email: <code style={{ color: 'var(--secondary)' }}>admin@creavie.com</code><br />
+                Email: <code style={{ color: 'var(--secondary)' }}>admin@creativemarketingtm.com</code><br />
                 Password: <code style={{ color: 'var(--secondary)' }}>admin</code>
               </>
             ) : (

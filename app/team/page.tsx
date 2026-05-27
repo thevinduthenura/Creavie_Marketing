@@ -18,7 +18,7 @@ const openings = [
     flag: '🇨🇦',
     type: 'Full-Time',
     dept: 'HR',
-    desc: 'Oversee HR strategy, talent acquisition, and workforce development for our Canadian office. You will champion the Creavie culture of trust and excellence.',
+    desc: 'Oversee HR strategy, talent acquisition, and workforce development for our Canadian office. You will champion the Creative culture of trust and excellence.',
   },
   {
     title: 'Senior Marketing Executive',
@@ -66,14 +66,14 @@ const leaders = [
     role: 'CEO & Founder',
     dept: 'Leadership',
     img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400',
-    bio: '20+ years in the industry. James founded Creavie with a focus on results and long-term client relationships.',
+    bio: '20+ years in the industry. James founded Creative with a focus on results and long-term client relationships.',
   },
   {
     name: 'Sophia Chen',
     role: 'Chief Creative Officer',
     dept: 'Creative',
     img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400&h=400',
-    bio: 'Sophia leads the creative team. She has shaped the look and feel of Creavie since day one.',
+    bio: 'Sophia leads the creative team. She has shaped the look and feel of Creative since day one.',
   },
   {
     name: 'Marcus Reid',
@@ -87,7 +87,7 @@ const leaders = [
     role: 'Chief Technology Officer',
     dept: 'Technology',
     img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400',
-    bio: 'Amelia oversees all technology at Creavie, from client platforms to internal tools and infrastructure.',
+    bio: 'Amelia oversees all technology at Creative, from client platforms to internal tools and infrastructure.',
   },
   {
     name: 'Oliver Banks',
@@ -101,7 +101,7 @@ const leaders = [
     role: 'Director of Operations',
     dept: 'Operations',
     img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400&h=400',
-    bio: 'Nina keeps Creavie running day to day across all five offices and makes sure nothing falls through the cracks.',
+    bio: 'Nina keeps Creative running day to day across all five offices and makes sure nothing falls through the cracks.',
   },
   {
     name: 'Ethan Kwon',
@@ -169,7 +169,7 @@ export default function Team() {
             <span className="section-label">Our Leadership</span>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1.5rem' }}>
               <h2 className="section-title" style={{ marginBottom: 0, fontSize: 'clamp(1.8rem,3.5vw,2.6rem)' }}>
-                The minds behind<br />Creavie Marketing
+                The minds behind<br />Creative Marketing
               </h2>
               <p className="section-desc" style={{ maxWidth: '380px' }}>
                 A team of industry leaders, creatives and strategists who share one goal: doing great work.
@@ -430,7 +430,7 @@ export default function Team() {
           <div>
             <div style={{ fontSize: '0.78rem', fontFamily: 'var(--font-title)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--secondary)', marginBottom: '0.7rem' }}>Don't see your role?</div>
             <h3 style={{ fontFamily: 'var(--font-title)', fontWeight: 800, fontSize: 'clamp(1.3rem,2.5vw,1.8rem)', marginBottom: '0.5rem' }}>Send us a speculative application</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', maxWidth: '460px' }}>We are always looking for exceptional talent. If you believe you have what it takes to join Creavie Marketing, get in touch and tell us why.</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', maxWidth: '460px' }}>We are always looking for exceptional talent. If you believe you have what it takes to join Creative Marketing, get in touch and tell us why.</p>
           </div>
           <Link href="/contact" className="btn-primary">
             <span>Get in Touch</span>

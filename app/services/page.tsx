@@ -46,7 +46,7 @@ const faqs = [
   { q: 'Why is digital marketing important for my business?', a: 'Digital marketing gives your brand a measurable, scalable reach. Unlike traditional media, you can target the right people, track results in real time and see exactly where your budget is going.' },
   { q: 'How does digital marketing help improve brand visibility?', a: 'Through a combination of SEO, paid advertising, social media presence, and compelling content, digital marketing ensures your brand surfaces exactly where your audience is spending time online.' },
   { q: 'How can SEO boost traffic from digital marketing efforts?', a: 'SEO aligns your content with what your customers are actively searching for. When done well, it consistently drives high-intent, organic traffic without ongoing ad spend, compounding returns over time.' },
-  { q: 'What makes Creavie different from other agencies?', a: 'We pair strong design with solid strategy and we only take on projects we know we can improve. Every client relationship is built to last, not just to deliver a one-off job.' },
+  { q: 'What makes Creative different from other agencies?', a: 'We pair strong design with solid strategy and we only take on projects we know we can improve. Every client relationship is built to last, not just to deliver a one-off job.' },
   { q: 'How do you measure the success of a digital campaign?', a: 'We agree on clear targets upfront, whether that is traffic, conversions, return on ad spend or brand awareness. You get transparent reports so you always know what impact our work is having.' },
 ];
 
