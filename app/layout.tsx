@@ -5,8 +5,8 @@ import Footer from './components/Footer';
 import React from 'react';
 
 export const metadata = {
-  title: 'Creavie Marketing — Premium Digital Marketing Agency',
-  description: 'Creavie Marketing is a forward-thinking digital marketing agency delivering brand strategy, UI/UX design, web development, and high-impact campaigns that grow traffic and increase revenue.',
+  title: 'Creavie Marketing | Digital Marketing Agency',
+  description: 'Creavie Marketing is a digital marketing agency based in Ireland. We help brands grow through strategy, design, web development, and campaigns that drive real results.',
   keywords: 'Creavie Marketing, digital marketing agency, brand strategy, ui ux design, web development, SEO',
 };
 

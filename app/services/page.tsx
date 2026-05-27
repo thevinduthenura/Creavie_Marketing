@@ -9,7 +9,7 @@ const services = [
     id: 'brand',
     icon: <IconLayers size={22} color="var(--secondary)" strokeWidth={1.8} />,
     title: 'Brand Strategy',
-    desc: 'From positioning to identity systems — we architect brands that command attention and earn loyalty across every touchpoint.',
+    desc: 'We work from positioning to visual identity, building brands that get noticed and keep clients coming back.',
     tags: ['Positioning', 'Identity', 'Research'],
   },
   {
@@ -23,14 +23,14 @@ const services = [
     id: 'web',
     icon: <IconCode size={22} color="var(--secondary)" strokeWidth={1.8} />,
     title: 'Web Development',
-    desc: 'High-performance websites and web apps built with modern stacks — engineered for speed, scalability, and seamless interaction.',
+    desc: 'Fast, reliable websites and web apps built with modern tools. We focus on speed, solid structure, and experiences that feel smooth to use.',
     tags: ['React', 'Next.js', 'Animation'],
   },
   {
     id: 'motion',
     icon: <IconPlay size={22} color="var(--secondary)" strokeWidth={1.8} />,
     title: 'Motion Design',
-    desc: 'Cinematic animations and motion graphics that bring your brand to life — from micro-interactions to full campaign visuals.',
+    desc: 'Animations and motion graphics that bring your brand to life. We handle everything from small interactions to full campaign video.',
     tags: ['After Effects', 'Lottie', '3D'],
   },
   {
@@ -43,11 +43,11 @@ const services = [
 ];
 
 const faqs = [
-  { q: 'Why is digital marketing important for my business?', a: 'Digital marketing gives your brand measurable, scalable reach. Unlike traditional media, it enables precise targeting, real-time tracking, and a provable return on every dollar spent — making it essential for modern business growth.' },
+  { q: 'Why is digital marketing important for my business?', a: 'Digital marketing gives your brand a measurable, scalable reach. Unlike traditional media, you can target the right people, track results in real time and see exactly where your budget is going.' },
   { q: 'How does digital marketing help improve brand visibility?', a: 'Through a combination of SEO, paid advertising, social media presence, and compelling content, digital marketing ensures your brand surfaces exactly where your audience is spending time online.' },
   { q: 'How can SEO boost traffic from digital marketing efforts?', a: 'SEO aligns your content with what your customers are actively searching for. When done well, it consistently drives high-intent, organic traffic without ongoing ad spend, compounding returns over time.' },
-  { q: 'What makes Creavie different from other agencies?', a: 'We combine world-class design with rigorous strategy. We don\'t take on projects we can\'t elevate — every engagement is treated as a long-term partnership aimed at measurably transforming your brand.' },
-  { q: 'How do you measure the success of a digital campaign?', a: 'We define clear KPIs upfront — whether that\'s traffic, conversions, ROAS, or brand lift — and provide transparent reporting dashboards so you always know the impact of our work.' },
+  { q: 'What makes Creavie different from other agencies?', a: 'We pair strong design with solid strategy and we only take on projects we know we can improve. Every client relationship is built to last, not just to deliver a one-off job.' },
+  { q: 'How do you measure the success of a digital campaign?', a: 'We agree on clear targets upfront, whether that is traffic, conversions, return on ad spend or brand awareness. You get transparent reports so you always know what impact our work is having.' },
 ];
 
 export default function Services() {

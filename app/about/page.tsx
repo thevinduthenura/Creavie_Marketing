@@ -14,7 +14,7 @@ const locations = [
 const articles = [
   { tag: 'Customer Experience', title: 'Keeping Clients at the Center of Every Decision', desc: 'Our customer-first philosophy ensures every campaign creates genuine value and lasting satisfaction for clients worldwide.', date: 'May 2024' },
   { tag: 'Government Projects', title: 'Excellence in Public Sector & VIP Engagements', desc: 'Creavie Marketing has an established track record delivering premium, confidential projects for government bodies and VIP clients.', date: 'Apr 2024' },
-  { tag: 'Global Presence', title: 'How We Scaled to 500+ Professionals Across 5 Countries', desc: 'From our Ireland HQ to offices in Canada, Australia, USA and New Zealand — how we built a globally trusted workforce.', date: 'Mar 2024' },
+  { tag: 'Global Presence', title: 'How We Scaled to 500+ Professionals Across 5 Countries', desc: 'From our Ireland HQ to offices in Canada, Australia, the USA and New Zealand. Here is how we built a globally trusted team.', date: 'Mar 2024' },
 ];
 
 export default function About() {
@@ -55,7 +55,7 @@ export default function About() {
               Founded and led by <strong style={{ color: 'var(--text-dark)' }}>Dr. Gerald</strong>, Creavie Marketing is headquartered in Ireland with regional offices across Canada, Australia, the United States, and New Zealand.
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              We specialise in customer involvement, entertainment, and satisfaction — delivering premium marketing for commercial, government, and VIP clients worldwide. Our approach is built on integrity, precision, and measurable results.
+              We work in customer involvement, entertainment and satisfaction. We serve commercial, government and VIP clients worldwide, and we take every project seriously.
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '3rem' }}>
               With over <strong style={{ color: 'var(--text-dark)' }}>500 professionals globally</strong> and a portfolio exceeding <strong style={{ color: 'var(--text-dark)' }}>10,000 completed projects</strong>, we are built for the world's most demanding briefs.

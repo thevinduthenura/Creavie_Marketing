@@ -67,7 +67,7 @@ export default function Contact() {
               Ready to<br />launch?
             </h1>
             <p className="section-desc">
-              Whether you&apos;re a startup finding your voice or an established brand seeking a new orbit — we&apos;re your launchpad.
+              Whether you are a startup just getting started or an established brand ready for something new, we are here to help.
             </p>
           </div>
         </div>

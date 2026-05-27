@@ -9,15 +9,16 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('All Work');
 
   const portfolio = [
-    { category: 'Digital Branding', tag: 'Brand Identity', title: 'NovaSphere', img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800', slug: 'novasphere' },
-    { category: 'Web Development', tag: 'Web Dev', title: 'Luxen Finance', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800', slug: 'luxen-finance' },
-    { category: 'Marketing', tag: 'Campaign', title: 'Orbit Fashion', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800', slug: 'orbit-fashion' },
-    { category: 'Digital Branding', tag: 'UI/UX Design', title: 'Pulse Health', img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800', slug: 'pulse-health' },
-    { category: 'Marketing', tag: 'Motion Design', title: 'Vertex Labs', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800', slug: 'vertex-labs' }
+    { category: 'Digital Branding', tag: 'Smart Tech', title: 'Dot Pad', img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800', slug: 'dot-pad' },
+    { category: 'Marketing', tag: 'Social Campaign', title: 'Penny Price Packs', img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800', slug: 'penny-price-packs' },
+    { category: 'Web Development', tag: 'IoT Dashboard', title: 'Animal Alerts', img: 'https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&q=80&w=800', slug: 'animal-alerts' },
+    { category: 'Digital Branding', tag: 'Creative Fashion', title: 'Rainbow Wool', img: 'https://images.unsplash.com/photo-1528747045372-3c868202b37a?auto=format&fit=crop&q=80&w=800', slug: 'rainbow-wool' },
+    { category: 'Marketing', tag: 'Global Launch', title: 'Lufthansa Centennial', img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800', slug: 'lufthansa-centennial' },
+    { category: 'Web Development', tag: 'Interactive Game', title: 'Lupins Quest', img: 'https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?auto=format&fit=crop&q=80&w=800', slug: 'lupins-quest' }
   ];
 
   const filters = ['All Work', 'Digital Branding', 'Web Development', 'Marketing'];
-  const filteredWorks = activeTab === 'All Work' ? portfolio.slice(0, 3) : portfolio.filter(p => p.category === activeTab);
+  const filteredWorks = activeTab === 'All Work' ? portfolio.slice(0, 6) : portfolio.filter(p => p.category === activeTab);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
@@ -88,7 +89,7 @@ export default function Home() {
                 transition: 'all 1s cubic-bezier(0.16,1,0.3,1) 0.4s',
               }}
             >
-              Strategy, design, and digital experience — crafted for brands that refuse to be ordinary and built for a future that demands excellence.
+              Strategy, design and digital experience built for brands that want to stand out and actually grow.
             </p>
 
             <div
@@ -200,7 +201,7 @@ export default function Home() {
                 Provide the best service with out of the box ideas
               </h2>
               <p className="section-desc" style={{ marginBottom: '2.5rem' }}>
-                We don't follow trends — we create them. Our multidisciplinary team crafts strategies and designs that set you apart from the competition.
+                We don't just follow trends. Our team builds strategies and designs that help you stand out from the competition.
               </p>
               <Link href="/services" className="btn-primary">
                 <span>Explore Services</span>
