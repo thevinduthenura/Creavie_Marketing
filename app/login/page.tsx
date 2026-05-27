@@ -85,37 +85,49 @@ export default function LoginPage() {
     <div
       style={{
         minHeight: '100vh',
-        background: '#ffffff',
+        background: '#05050a',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem 1.2rem',
         fontFamily: 'var(--font-title), sans-serif',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
+      {/* Immersive glow effects */}
+      <div style={{
+        position: 'absolute', top: '15%', left: '10%', width: '300px', height: '300px',
+        background: 'rgba(144, 235, 0, 0.04)', borderRadius: '50%', filter: 'blur(100px)', zIndex: 1
+      }} />
+      <div style={{
+        position: 'absolute', bottom: '15%', right: '10%', width: '350px', height: '350px',
+        background: 'rgba(144, 235, 0, 0.03)', borderRadius: '50%', filter: 'blur(120px)', zIndex: 1
+      }} />
+
       <div
-        className="white-card"
         style={{
           width: '100%',
           maxWidth: '440px',
-          boxShadow: mode === 'admin' 
-            ? '0 15px 50px rgba(144, 235, 0, 0.12), 0 0 0 1px rgba(144, 235, 0, 0.2)'
-            : '0 15px 45px rgba(12, 12, 20, 0.04)',
+          boxShadow: '0 25px 60px rgba(0,0,0,0.6)',
           borderRadius: '28px',
           padding: '2.5rem 2rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-          border: mode === 'admin' ? '1px solid rgba(144, 235, 0, 0.4)' : '1px solid rgba(12, 12, 20, 0.06)',
-          background: '#ffffff',
+          border: '1px solid rgba(144, 235, 0, 0.15)',
+          background: 'rgba(13, 13, 24, 0.7)',
+          backdropFilter: 'blur(20px)',
+          position: 'relative',
+          zIndex: 10,
         }}
       >
         {/* Brand Header */}
         <div style={{ textAlign: 'center', marginBottom: '2.2rem' }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.4rem', marginBottom: '0.4rem' }}>
-            <IconLogoMark size={20} color={mode === 'admin' ? 'var(--secondary)' : 'var(--text-dark)'} />
-            <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-dark)', letterSpacing: '-0.02em' }}>
+            <IconLogoMark size={20} color="var(--secondary)" />
+            <span style={{ fontSize: '1.25rem', fontWeight: 500, color: '#ffffff', letterSpacing: '-0.02em' }}>
               Creavie
             </span>
           </div>
@@ -128,8 +140,8 @@ export default function LoginPage() {
         <h2
           style={{
             fontSize: '1.8rem',
-            fontWeight: 800,
-            color: 'var(--text-dark)',
+            fontWeight: 500,
+            color: '#ffffff',
             letterSpacing: '-0.02em',
             marginBottom: '1.8rem',
             textAlign: 'center',
@@ -151,15 +163,9 @@ export default function LoginPage() {
               fontWeight: 500,
               lineHeight: 1.4,
               marginBottom: '1.5rem',
-              background: message.type === 'success' 
-                ? 'rgba(144, 235, 0, 0.08)' 
-                : 'rgba(239, 68, 68, 0.06)',
-              border: message.type === 'success' 
-                ? '1px solid rgba(144, 235, 0, 0.25)' 
-                : '1px solid rgba(239, 68, 68, 0.15)',
-              color: message.type === 'success' 
-                ? '#548f00' 
-                : '#dc2626',
+              background: 'rgba(144, 235, 0, 0.08)',
+              border: '1px solid rgba(144, 235, 0, 0.25)',
+              color: 'var(--secondary)',
             }}
           >
             {message.text}
@@ -180,23 +186,15 @@ export default function LoginPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '0.8rem',
-                  background: '#ffffff',
-                  color: 'var(--text-dark)',
-                  border: '1px solid rgba(12, 12, 20, 0.12)',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
                   borderRadius: '14px',
                   padding: '0.9rem 1.2rem',
                   fontSize: '0.95rem',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.25s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--text-dark)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.02)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(12, 12, 20, 0.12)';
-                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 {/* SVG Google Logo */}
@@ -218,23 +216,15 @@ export default function LoginPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '0.8rem',
-                  background: '#ffffff',
-                  color: 'var(--text-dark)',
-                  border: '1px solid rgba(12, 12, 20, 0.12)',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
                   borderRadius: '14px',
                   padding: '0.9rem 1.2rem',
                   fontSize: '0.95rem',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.25s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--text-dark)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.02)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(12, 12, 20, 0.12)';
-                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 {/* SVG Apple Logo */}
@@ -253,23 +243,15 @@ export default function LoginPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '0.8rem',
-                  background: '#ffffff',
-                  color: 'var(--text-dark)',
-                  border: '1px solid rgba(12, 12, 20, 0.12)',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
                   borderRadius: '14px',
                   padding: '0.9rem 1.2rem',
                   fontSize: '0.95rem',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.25s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--text-dark)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.02)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(12, 12, 20, 0.12)';
-                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -284,7 +266,7 @@ export default function LoginPage() {
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', width: '100%' }}>
               {mode === 'signup' && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
                     Full Name
                   </label>
                   <input
@@ -298,7 +280,9 @@ export default function LoginPage() {
                       width: '100%',
                       padding: '0.85rem 1rem',
                       borderRadius: '12px',
-                      border: '1px solid rgba(12, 12, 20, 0.15)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      background: 'rgba(255,255,255,0.03)',
+                      color: '#ffffff',
                       fontSize: '0.95rem',
                       outline: 'none',
                       transition: 'all 0.3s ease',
@@ -309,7 +293,7 @@ export default function LoginPage() {
               )}
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
                   Email Coordinates
                 </label>
                 <input
@@ -323,7 +307,9 @@ export default function LoginPage() {
                     width: '100%',
                     padding: '0.85rem 1rem',
                     borderRadius: '12px',
-                    border: mode === 'admin' ? '1px solid rgba(144, 235, 0, 0.3)' : '1px solid rgba(12, 12, 20, 0.15)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'rgba(255,255,255,0.03)',
+                    color: '#ffffff',
                     fontSize: '0.95rem',
                     outline: 'none',
                     transition: 'all 0.3s ease',
@@ -334,7 +320,7 @@ export default function LoginPage() {
 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem' }}>
-                  <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     Security Key
                   </label>
                   {mode === 'login' && (
@@ -354,7 +340,9 @@ export default function LoginPage() {
                     width: '100%',
                     padding: '0.85rem 1rem',
                     borderRadius: '12px',
-                    border: mode === 'admin' ? '1px solid rgba(144, 235, 0, 0.3)' : '1px solid rgba(12, 12, 20, 0.15)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'rgba(255,255,255,0.03)',
+                    color: '#ffffff',
                     fontSize: '0.95rem',
                     outline: 'none',
                     transition: 'all 0.3s ease',
@@ -370,8 +358,8 @@ export default function LoginPage() {
                     style={{
                       width: '24px',
                       height: '24px',
-                      border: '3px solid rgba(12,12,20,0.1)',
-                      borderTopColor: mode === 'admin' ? 'var(--secondary)' : 'var(--text-dark)',
+                      border: '3px solid rgba(255,255,255,0.1)',
+                      borderTopColor: 'var(--secondary)',
                       borderRadius: '50%',
                       animation: 'spin 0.8s linear infinite',
                     }}
@@ -382,8 +370,8 @@ export default function LoginPage() {
                   type="submit"
                   style={{
                     width: '100%',
-                    background: mode === 'admin' ? 'var(--secondary)' : 'var(--bg-dark)',
-                    color: mode === 'admin' ? 'var(--text-dark)' : 'var(--text-light)',
+                    background: 'var(--secondary)',
+                    color: 'var(--text-dark)',
                     border: 'none',
                     borderRadius: '14px',
                     padding: '0.95rem',
@@ -391,14 +379,8 @@ export default function LoginPage() {
                     fontSize: '0.95rem',
                     cursor: 'pointer',
                     marginTop: '0.4rem',
-                    boxShadow: mode === 'admin' ? '0 5px 15px var(--secondary-glow)' : 'none',
+                    boxShadow: '0 4px 15px rgba(144, 235, 0, 0.2)',
                     transition: 'all 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-1px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'none';
                   }}
                 >
                   {mode === 'signup' && 'Create Account'}
@@ -453,7 +435,7 @@ export default function LoginPage() {
               onChange={() => setAgreePromo(!agreePromo)}
               style={{
                 marginTop: '0.15rem',
-                accentColor: 'var(--text-dark)',
+                accentColor: 'var(--secondary)',
                 width: '15px',
                 height: '15px',
                 cursor: 'pointer',
@@ -476,11 +458,11 @@ export default function LoginPage() {
             }}
           >
             By continuing, you agree to Creavie&apos;s{' '}
-            <Link href="/terms" style={{ color: 'var(--text-dark)', fontWeight: 600, textDecoration: 'underline' }}>
+            <Link href="/terms" style={{ color: '#ffffff', fontWeight: 600, textDecoration: 'underline' }}>
               Terms of Use
             </Link>{' '}
             and{' '}
-            <Link href="/privacy" style={{ color: 'var(--text-dark)', fontWeight: 600, textDecoration: 'underline' }}>
+            <Link href="/privacy" style={{ color: '#ffffff', fontWeight: 600, textDecoration: 'underline' }}>
               Privacy Policy
             </Link>
             .
@@ -492,7 +474,8 @@ export default function LoginPage() {
           <div
             style={{
               width: '100%',
-              background: 'rgba(12,12,20,0.03)',
+              background: 'rgba(255,255,255,0.02)',
+              border: '1px solid rgba(255,255,255,0.05)',
               borderRadius: '12px',
               padding: '0.8rem 1rem',
               fontSize: '0.75rem',
@@ -503,13 +486,13 @@ export default function LoginPage() {
           >
             {mode === 'admin' ? (
               <>
-                <strong style={{ color: 'var(--text-dark)' }}>Admin HQ credentials:</strong><br />
-                Email: <code style={{ color: 'var(--text-dark)' }}>admin@creavie.com</code><br />
-                Password: <code style={{ color: 'var(--text-dark)' }}>admin</code>
+                <strong style={{ color: '#ffffff' }}>Admin HQ credentials:</strong><br />
+                Email: <code style={{ color: 'var(--secondary)' }}>admin@creavie.com</code><br />
+                Password: <code style={{ color: 'var(--secondary)' }}>admin</code>
               </>
             ) : (
               <>
-                <strong style={{ color: 'var(--text-dark)' }}>Dev Testing note:</strong> Any mock credentials will pass validation and redirect securely.
+                <strong style={{ color: '#ffffff' }}>Dev Testing note:</strong> Any mock credentials will pass validation and redirect securely.
               </>
             )}
           </div>
@@ -520,7 +503,7 @@ export default function LoginPage() {
           style={{
             marginTop: '1.8rem',
             paddingTop: '1.4rem',
-            borderTop: '1px solid rgba(12, 12, 20, 0.06)',
+            borderTop: '1px solid rgba(255,255,255,0.06)',
             width: '100%',
             textAlign: 'center',
             fontSize: '0.88rem',
@@ -535,7 +518,7 @@ export default function LoginPage() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: 'var(--text-dark)',
+                  color: '#ffffff',
                   fontWeight: 700,
                   cursor: 'pointer',
                   textDecoration: 'underline',
@@ -555,7 +538,7 @@ export default function LoginPage() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: 'var(--text-dark)',
+                  color: '#ffffff',
                   fontWeight: 700,
                   cursor: 'pointer',
                   textDecoration: 'underline',
@@ -573,7 +556,7 @@ export default function LoginPage() {
               style={{
                 background: 'none',
                 border: 'none',
-                color: 'var(--text-dark)',
+                color: '#ffffff',
                 fontWeight: 700,
                 cursor: 'pointer',
                 textDecoration: 'underline',
@@ -605,7 +588,7 @@ export default function LoginPage() {
               padding: 0,
               fontFamily: 'inherit',
             }}
-            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-dark)'}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#ffffff'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
           >
             Looking for Admin HQ Sign-in?
