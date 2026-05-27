@@ -256,23 +256,20 @@ export default function CaseStudyPage() {
 
       {/* ── Main Immersive Hero Image ── */}
       <div className="container" style={{ marginBottom: '6rem' }}>
-        <div style={{
-          borderRadius: '32px',
-          overflow: 'hidden',
-          height: '520px',
-          backgroundImage: `linear-gradient(to bottom, rgba(12,12,20,0.1), rgba(12,12,20,0.5)), url(${study.img})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          boxShadow: '0 25px 60px rgba(0,0,0,0.4)',
-          opacity: loaded ? 1 : 0,
-          transform: loaded ? 'scale(1)' : 'scale(0.98)',
-          transition: 'all 1.2s cubic-bezier(0.16,1,0.3,1)'
-        }} />
+        <div 
+          className="case-study-hero"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(12,12,20,0.1), rgba(12,12,20,0.5)), url(${study.img})`,
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? 'scale(1)' : 'scale(0.98)',
+            transition: 'all 1.2s cubic-bezier(0.16,1,0.3,1)'
+          }} 
+        />
       </div>
 
       {/* ── Case Study Metas, Challenge, Solution & Metrics ── */}
       <div className="container" style={{ paddingBottom: '6rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.25fr 0.75fr', gap: '5.5rem', alignItems: 'start' }}>
+        <div className="case-study-details-grid">
           
           {/* Main Content Blocks */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4.5rem' }}>
@@ -321,7 +318,7 @@ export default function CaseStudyPage() {
           </div>
 
           {/* Dynamic Sidebar Info */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.2rem', position: 'sticky', top: '150px' }}>
+          <div className="case-study-sidebar">
             
             {/* Metas Card */}
             <div className="white-card" style={{ padding: '2.5rem' }}>
@@ -368,17 +365,14 @@ export default function CaseStudyPage() {
       {/* ── Immersive Parallel Images / Creative Assets Gallery ── */}
       <div className="container" style={{ paddingBottom: '8rem' }}>
         <span className="section-label" style={{ marginBottom: '2rem' }}>Creative Assets & Execution</span>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '2rem' }}>
-          <div style={{
-            borderRadius: '24px',
-            overflow: 'hidden',
-            height: '420px',
-            backgroundImage: `url(${study.secondaryImg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            boxShadow: '0 15px 40px rgba(0,0,0,0.3)',
-          }} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <div className="case-study-gallery-grid">
+          <div 
+            className="case-study-gallery-left"
+            style={{
+              backgroundImage: `url(${study.secondaryImg})`,
+            }} 
+          />
+          <div className="case-study-gallery-right">
             {study.galleryImgs.map((img, i) => (
               <div key={i} style={{
                 borderRadius: '24px',
