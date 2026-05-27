@@ -37,15 +37,20 @@ export default function LoginPage() {
           setMessage({ type: 'error', text: 'Access Denied. Invalid administrative credentials.' });
         }
       } else {
-        // Mock User Login / Sign Up
-        if (!email || !password || (mode === 'signup' && !name)) {
-          setLoading(false);
-          setMessage({ type: 'error', text: 'Please fill in all required vectors.' });
-          return;
-        }
-        setMessage({ type: 'success', text: mode === 'signup' ? 'Account created securely! Redirecting to home...' : 'Authorization successful. Welcome back!' });
+        // Save user session
+        const loggedInName = name || email.split('@')[0];
+        localStorage.setItem('creavie_user', JSON.stringify({
+          name: loggedInName.charAt(0).toUpperCase() + loggedInName.slice(1),
+          email: email,
+          avatar: loggedInName.slice(0, 2).toUpperCase()
+        }));
+        
+        // Dispatch event so Navbar state is updated instantly
+        window.dispatchEvent(new Event('storage'));
+
+        setMessage({ type: 'success', text: mode === 'signup' ? 'Account created securely! Launching client portal...' : 'Authorization successful. Welcome back!' });
         setTimeout(() => {
-          router.push('/');
+          router.push('/portal');
         }, 1500);
       }
     }, 1200);
@@ -54,8 +59,16 @@ export default function LoginPage() {
   const handleSocialClick = (platform: string) => {
     setLoading(true);
     setMessage({ type: 'success', text: `Connecting secure OAuth pathway with ${platform}...` });
+    
+    localStorage.setItem('creavie_user', JSON.stringify({
+      name: 'Alpha Explorer',
+      email: `explorer@${platform.toLowerCase()}.com`,
+      avatar: platform.slice(0, 1).toUpperCase()
+    }));
+    window.dispatchEvent(new Event('storage'));
+
     setTimeout(() => {
-      router.push('/');
+      router.push('/portal');
     }, 1500);
   };
 

@@ -2,13 +2,37 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { IconLogoMark } from './Icons';
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<{ name: string; email: string; avatar: string } | null>(null);
   const pathname = usePathname();
+  const router = useRouter(); // Next.js router instance
+
+  useEffect(() => {
+    const checkUser = () => {
+      const stored = localStorage.getItem('creavie_user');
+      if (stored) {
+        setUser(JSON.parse(stored));
+      } else {
+        setUser(null);
+      }
+    };
+    checkUser();
+
+    // Listen to storage changes for instant reactive navbar updates
+    window.addEventListener('storage', checkUser);
+    return () => window.removeEventListener('storage', checkUser);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('creavie_user');
+    window.dispatchEvent(new Event('storage'));
+    router.push('/login');
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -46,16 +70,34 @@ export default function NavBar() {
                 </Link>
               </li>
             ))}
-            <li style={{ marginLeft: '1rem' }}>
-              <Link href="/login" style={{ color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.95rem', transition: 'color 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-dark)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}>
-                Log In
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="nav-cta">
-                Get Started
-              </Link>
-            </li>
+            
+            {user ? (
+              <>
+                <li style={{ marginLeft: '1rem' }}>
+                  <Link href="/portal" className="nav-cta" style={{ background: 'var(--bg-dark)', color: 'var(--text-light)' }}>
+                    Client Portal
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={handleLogout} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#dc2626', fontWeight: 600, fontSize: '0.95rem', marginLeft: '0.5rem', transition: 'opacity 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>
+                    Sign Out
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li style={{ marginLeft: '1rem' }}>
+                  <Link href="/login" style={{ color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.95rem', transition: 'color 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-dark)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}>
+                    Log In
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="nav-cta">
+                    Get Started
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
 
           {/* Hamburger */}
@@ -133,25 +175,58 @@ export default function NavBar() {
             {link.name}
           </Link>
         ))}
-        <Link
-          href="/login"
-          onClick={() => setIsOpen(false)}
-          style={{
-            fontFamily: 'var(--font-title)',
-            fontSize: '1.3rem',
-            fontWeight: 700,
-            color: 'var(--text-dark)',
-          }}
-        >
-          Log In
-        </Link>
-        <Link
-          href="/contact"
-          onClick={() => setIsOpen(false)}
-          className="btn-primary"
-        >
-          <span>Get Started</span>
-        </Link>
+        {user ? (
+          <>
+            <Link
+              href="/portal"
+              onClick={() => setIsOpen(false)}
+              style={{
+                fontFamily: 'var(--font-title)',
+                fontSize: '1.3rem',
+                fontWeight: 700,
+                color: 'var(--text-dark)',
+              }}
+            >
+              Client Portal
+            </Link>
+            <button
+              onClick={() => { handleLogout(); setIsOpen(false); }}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-title)',
+                fontSize: '1.3rem',
+                fontWeight: 700,
+                color: '#dc2626',
+              }}
+            >
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <>
+            <Link
+              href="/login"
+              onClick={() => setIsOpen(false)}
+              style={{
+                fontFamily: 'var(--font-title)',
+                fontSize: '1.3rem',
+                fontWeight: 700,
+                color: 'var(--text-dark)',
+              }}
+            >
+              Log In
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="btn-primary"
+            >
+              <span>Get Started</span>
+            </Link>
+          </>
+        )}
       </div>
     </>
   );
