@@ -53,7 +53,7 @@ export default function NavBar() {
         <div className="nav-container">
           <Link href="/" className="nav-logo" style={{ fontSize: '1.15rem' }}>
             <IconLogoMark size={18} />
-            <span className="logo-text">Creavie Marketing</span>
+            <span className="logo-text" style={{ whiteSpace: 'nowrap' }}>Creavie Marketing</span>
           </Link>
 
           <ul className="nav-links" style={{ display: 'flex', alignItems: 'center' }}>
@@ -100,19 +100,11 @@ export default function NavBar() {
             )}
           </ul>
 
-          {/* Hamburger */}
+          {/* Hamburger — shown on mobile via CSS class */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
-            style={{
-              display: 'none',
-              flexDirection: 'column',
-              gap: '5px',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '8px',
-            }}
+            className="hamburger-btn"
           >
             {[0, 1, 2].map((i) => (
               <span
