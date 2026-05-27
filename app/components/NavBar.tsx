@@ -32,7 +32,7 @@ export default function NavBar() {
             <span className="logo-text">Creavie Marketing</span>
           </Link>
 
-          <ul className="nav-links" style={{ display: 'flex' }}>
+          <ul className="nav-links" style={{ display: 'flex', alignItems: 'center' }}>
             {navLinks.map((link) => (
               <li key={link.path}>
                 <Link
@@ -46,6 +46,11 @@ export default function NavBar() {
                 </Link>
               </li>
             ))}
+            <li style={{ marginLeft: '1rem' }}>
+              <Link href="/login" style={{ color: 'var(--text-muted)', fontWeight: 600, fontSize: '0.95rem', transition: 'color 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text-dark)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}>
+                Log In
+              </Link>
+            </li>
             <li>
               <Link href="/contact" className="nav-cta">
                 Get Started
@@ -128,6 +133,18 @@ export default function NavBar() {
             {link.name}
           </Link>
         ))}
+        <Link
+          href="/login"
+          onClick={() => setIsOpen(false)}
+          style={{
+            fontFamily: 'var(--font-title)',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            color: 'var(--text-dark)',
+          }}
+        >
+          Log In
+        </Link>
         <Link
           href="/contact"
           onClick={() => setIsOpen(false)}
