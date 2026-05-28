@@ -203,34 +203,34 @@ export default function Services() {
             {
               title: 'Brand Identity Starter',
               subtitle: 'BUDGET',
-              price: '$199',
+              price: '$135',
               crew: '1 Brand Strategist + 1 Graphic Designer',
               preproduction: ['1-Hour brand positioning consultation.', 'Target audience mapping.'],
               production: ['Full Visual Brand Identity Book.', '6 Custom Social Media Templates (Figma).', 'Business card & stationery mockups.'],
               postproduction: ['All source files (SVG, PDF, Figma).', '1 Round of premium brand revisions.'],
-              addon: 'Add Landing Page for +$120',
+              addon: 'Add Landing Page for +$75',
               isElite: false
             },
             {
               title: 'Growth Engine Standard',
               subtitle: 'STANDARD',
-              price: '$399',
+              price: '$259',
               crew: '1 UI/UX Designer + 1 Developer + 1 Copywriter',
               preproduction: ['Competitive UX benchmarking.', 'Conversion rate optimization roadmap.'],
               production: ['Custom 5-Page Responsive React Website.', 'High-conversion copy designed for sales.', 'Lead capture & contact forms.'],
               postproduction: ['SEO optimization (Google Search Console).', '30-Day post-launch maintenance SLA.'],
-              addon: 'Add Custom CMS / Blog for +$120',
+              addon: 'Add Custom CMS / Blog for +$75',
               isElite: false
             },
             {
               title: 'Ultimate Digital Presence',
               subtitle: 'PREMIUM',
-              price: '$799',
+              price: '$499',
               crew: '1 Tech Lead + 2 Senior Devs + 1 Creative Director',
               preproduction: ['Deep-dive technical system mapping.', 'High-fidelity Figma user testing.'],
               production: ['Custom Web Application or Shopify Store.', 'Secure client/admin billing portal.', 'Dynamic API & inventory integration.'],
               postproduction: ['Full technical SEO & page speed acceleration.', '2 Months dedicated developer support.'],
-              addon: 'Add Mobile Companion for +$599',
+              addon: 'Add Mobile Companion for +$365',
               isElite: false
             }
           ].map((pkg, idx) => (
@@ -309,7 +309,7 @@ export default function Services() {
             {
               title: 'Elite Omnichannel Scale',
               subtitle: 'PREMIUM PLUS',
-              price: '$1,399',
+              price: '$849',
               crew: 'Dedicated Growth Team (5 Specialists)',
               preproduction: ['12-Month digital growth blueprint.', 'Conversion tracking & pixel architecture design.'],
               production: ['Complete platform visual redesign.', 'High-performance social ad creatives.', 'A/B testing campaign setup.'],
@@ -319,7 +319,7 @@ export default function Services() {
             {
               title: 'Creative Domination Elite',
               subtitle: 'ELITE - OMNICHANNEL SUITE',
-              price: '$2,499',
+              price: '$1,359',
               crew: 'Full Agency Director Team (Account, Tech, Creative, Ads leads)',
               preproduction: ['Deep market analysis & competitor teardowns.', 'Premium custom storyboard planning.'],
               production: ['Enterprise headless CMS web infrastructure.', 'Cinematic video commercial production.', 'Unlimited custom ad creatives designed monthly.'],
