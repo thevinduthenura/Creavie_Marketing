@@ -174,6 +174,251 @@ export default function Services() {
         </div>
       </div>
 
+      {/* ── PACKAGES & PRICING ── */}
+      <div className="container" style={{ marginBottom: '8rem' }}>
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '5rem',
+          opacity: loaded ? 1 : 0,
+          transform: loaded ? 'translateY(0)' : 'translateY(30px)',
+          transition: 'all 1s cubic-bezier(0.16,1,0.3,1) 0.1s',
+        }}>
+          <span className="section-label">Pricing Plans</span>
+          <h2 className="section-title" style={{ margin: '0 auto 1.5rem auto' }}>
+            PACKAGES
+          </h2>
+          <p className="section-desc" style={{ margin: '0 auto', textTransform: 'uppercase', fontSize: '0.82rem', letterSpacing: '0.08em', fontWeight: 600 }}>
+            Curated experiences tailored for every scale. Competitive entry-level pricing for premium production value.
+          </p>
+        </div>
+
+        {/* Row 1 Grid: Starter, Duo, Pro */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '2rem',
+          marginBottom: '2rem',
+        }}>
+          {[
+            {
+              title: 'The Starter Snap',
+              subtitle: 'BUDGET',
+              price: 'LKR 25,000',
+              crew: '1 Photographer',
+              preproduction: ['Phone consultation to discuss key moments.'],
+              production: ['Coverage: Up to 5 Hours.'],
+              postproduction: ['150+ Color-corrected high-res images.', 'Delivered via Google Drive/Cloud Link within 7 days.'],
+              addon: 'Add Drone for +LKR 10,000',
+              isElite: false
+            },
+            {
+              title: 'The Duo Coverage',
+              subtitle: 'STANDARD',
+              price: 'LKR 45,000',
+              crew: '1 Photographer + 1 Videographer',
+              preproduction: ['Shot list creation.', 'Coordination with event agenda.'],
+              production: ['Coverage: Up to 8 Hours.', 'Full HD (1080p) Video recording.'],
+              postproduction: ['150+ Edited Photos.', '3-minute Cinematic Highlight Video.', 'Raw footage provided on request.'],
+              addon: 'Add Drone for +LKR 10,000',
+              isElite: false
+            },
+            {
+              title: 'The Pro Storyteller',
+              subtitle: 'PREMIUM',
+              price: 'LKR 65,000',
+              crew: '2 Photographers + 1 Videographer',
+              preproduction: ['Site visit.', 'Mood board planning.'],
+              production: ['Coverage: Up to 8 Hours.', '4K Video Setup (Sony Mirrorless).'],
+              postproduction: ['300+ Signature Edited Photos.', '5-minute Highlight Film + Reels.'],
+              addon: 'Add Drone for +LKR 10,000',
+              isElite: false
+            }
+          ].map((pkg, idx) => (
+            <div
+              key={idx}
+              className="white-card"
+              style={{
+                background: 'var(--bg-white)',
+                border: 'var(--border-light)',
+                borderRadius: '24px',
+                padding: '2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.5rem',
+                opacity: loaded ? 1 : 0,
+                transform: loaded ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.8s cubic-bezier(0.16,1,0.3,1) ${idx * 0.1}s`,
+              }}
+            >
+              <div>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '0.2rem' }}>{pkg.title}</h3>
+                <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>{pkg.subtitle}</span>
+              </div>
+              
+              <div style={{ borderBottom: 'var(--border-light)', paddingBottom: '1.5rem' }}>
+                <span style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--secondary)' }}>{pkg.price}</span>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', flexGrow: 1 }}>
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Crew</span>
+                  <span style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>{pkg.crew}</span>
+                </div>
+
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Pre-Production</span>
+                  <ul style={{ paddingLeft: '1.1rem', margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                    {pkg.preproduction.map((bullet, bIdx) => <li key={bIdx}>{bullet}</li>)}
+                  </ul>
+                </div>
+
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Production</span>
+                  <ul style={{ paddingLeft: '1.1rem', margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                    {pkg.production.map((bullet, bIdx) => <li key={bIdx}>{bullet}</li>)}
+                  </ul>
+                </div>
+
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Post-Production</span>
+                  <ul style={{ paddingLeft: '1.1rem', margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                    {pkg.postproduction.map((bullet, bIdx) => <li key={bIdx}>{bullet}</li>)}
+                  </ul>
+                </div>
+              </div>
+
+              {pkg.addon && (
+                <div style={{ borderTop: 'var(--border-light)', paddingTop: '1.2rem', marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Optional Add-On</span>
+                  <span style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>{pkg.addon}</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Row 2 Grid: Ultimate, Elite */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '2rem',
+          maxWidth: '900px',
+          margin: '0 auto 4rem auto',
+        }}>
+          {[
+            {
+              title: 'The Ultimate Coverage',
+              subtitle: 'PREMIUM PLUS',
+              price: 'LKR 125,000',
+              crew: '3 Photographers + 1 Videographer + 1 Drone Operator',
+              preproduction: ['Site visit.', 'Event Plan.'],
+              production: ['Coverage: Full event.', 'Main Camera: Sony FX3 Rig (Cinema Grade 4K Quality).', 'Aerial: Professional Drone Pilot included (4K Aerials).'],
+              postproduction: ['400-500 Edited Retouched Photos.', '4 Aerial focused 30-sec Reels (9:16 Ratio - Instagram & TikTok Optimized).', '5-10 minute Cinematic After movie.'],
+              isElite: false
+            },
+            {
+              title: 'The "Hyper" Cinema',
+              subtitle: 'ELITE - RED COMBO PACK',
+              price: 'LKR 260,000',
+              crew: '3 Photographers + 3 Videographers (2 Cinematographers) + 2 Drone Operators (Steady + FPV)',
+              preproduction: ['Cinematic Storyboarding.', 'Detailed Lighting and Event Plan.'],
+              production: ['Coverage: Full Day.', 'Main Camera: RED Komodo (Cinema Grade 8K Quality).', 'Aerial: Professional Drone Pilot included (4K Aerials) + FPV Drone Coverage in 4K.'],
+              postproduction: ['600+ Edited Retouched Photos + 50 "Fine Art" retouched portraits.', 'Movie-grade Color Grading (DaVinci Resolve).', '1-minute Teaser (Instagram Ready) + 10-15 minute Cinematic Short Film.'],
+              isElite: true
+            }
+          ].map((pkg, idx) => (
+            <div
+              key={idx}
+              className={pkg.isElite ? "" : "white-card"}
+              style={{
+                background: pkg.isElite ? '#000000' : 'var(--bg-white)',
+                border: pkg.isElite ? '2px solid var(--secondary)' : 'var(--border-light)',
+                borderRadius: '24px',
+                padding: '2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.5rem',
+                opacity: loaded ? 1 : 0,
+                transform: loaded ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.8s cubic-bezier(0.16,1,0.3,1) ${(idx + 3) * 0.1}s`,
+                boxShadow: pkg.isElite ? '0 10px 40px var(--secondary-glow)' : 'none',
+              }}
+            >
+              <div>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '0.2rem' }}>{pkg.title}</h3>
+                <span style={{ fontSize: '0.72rem', color: pkg.isElite ? 'var(--secondary)' : 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>{pkg.subtitle}</span>
+              </div>
+              
+              <div style={{ borderBottom: 'var(--border-light)', paddingBottom: '1.5rem' }}>
+                <span style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--secondary)' }}>{pkg.price}</span>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', flexGrow: 1 }}>
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Crew</span>
+                  <span style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>{pkg.crew}</span>
+                </div>
+
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Pre-Production</span>
+                  <ul style={{ paddingLeft: '1.1rem', margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                    {pkg.preproduction.map((bullet, bIdx) => <li key={bIdx}>{bullet}</li>)}
+                  </ul>
+                </div>
+
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Production</span>
+                  <ul style={{ paddingLeft: '1.1rem', margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                    {pkg.production.map((bullet, bIdx) => <li key={bIdx}>{bullet}</li>)}
+                  </ul>
+                </div>
+
+                <div>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Post-Production</span>
+                  <ul style={{ paddingLeft: '1.1rem', margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                    {pkg.postproduction.map((bullet, bIdx) => <li key={bIdx}>{bullet}</li>)}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Optional Add-Ons Table */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.02)',
+          border: 'var(--border-light)',
+          borderRadius: '24px',
+          padding: '2.5rem',
+          opacity: loaded ? 1 : 0,
+          transform: loaded ? 'translateY(0)' : 'translateY(30px)',
+          transition: 'all 1s cubic-bezier(0.16,1,0.3,1) 0.5s',
+        }}>
+          <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.25rem', fontWeight: 800, color: '#fff', marginBottom: '1.5rem', textAlign: 'center', letterSpacing: '0.05em' }}>
+            OPTIONAL ADD-ONS
+          </h3>
+
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '500px' }}>
+              <thead>
+                <tr style={{ borderBottom: 'var(--border-light)' }}>
+                  <th style={{ padding: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Item</th>
+                  <th style={{ padding: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Price</th>
+                  <th style={{ padding: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: 'var(--border-light)' }}>
+                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: '#fff', fontWeight: 700 }}>Aerial (Drone) Coverage</td>
+                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>LKR 25,000</td>
+                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.88rem', color: 'var(--text-muted)' }}>Adds 20-30 mins of flight time for establishing shots. (Included in Premium Plus & Elite Packages).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       {/* ── FAQ ACCORDION ── */}
       <div className="faq-accordion-block">
         <div className="container">
