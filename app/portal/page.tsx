@@ -31,7 +31,7 @@ export default function ClientPortal() {
   ];
 
   useEffect(() => {
-    const session = localStorage.getItem('creavie_user');
+    const session = localStorage.getItem('creative_user');
     if (!session) {
       router.push('/login');
     } else {
@@ -40,7 +40,7 @@ export default function ClientPortal() {
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem('creavie_user');
+    localStorage.removeItem('creative_user');
     window.dispatchEvent(new Event('storage'));
     router.push('/login');
   };
@@ -376,7 +376,7 @@ export default function ClientPortal() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                alert('Strategy request dispatched successfully to Creavie Marketing Executives ✦');
+                alert('Strategy request dispatched successfully to Creative Marketing Executives ✦');
                 (e.target as HTMLFormElement).reset();
               }}
               style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}

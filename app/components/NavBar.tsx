@@ -14,7 +14,7 @@ export default function NavBar() {
 
   useEffect(() => {
     const checkUser = () => {
-      const stored = localStorage.getItem('creavie_user');
+      const stored = localStorage.getItem('creative_user');
       if (stored) {
         setUser(JSON.parse(stored));
       } else {
@@ -29,7 +29,7 @@ export default function NavBar() {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('creavie_user');
+    localStorage.removeItem('creative_user');
     window.dispatchEvent(new Event('storage'));
     router.push('/login');
   };

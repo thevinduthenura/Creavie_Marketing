@@ -39,7 +39,7 @@ export default function LoginPage() {
       } else {
         // Save user session
         const loggedInName = name || email.split('@')[0];
-        localStorage.setItem('creavie_user', JSON.stringify({
+        localStorage.setItem('creative_user', JSON.stringify({
           name: loggedInName.charAt(0).toUpperCase() + loggedInName.slice(1),
           email: email,
           avatar: loggedInName.slice(0, 2).toUpperCase()
@@ -60,7 +60,7 @@ export default function LoginPage() {
     setLoading(true);
     setMessage({ type: 'success', text: `Connecting secure OAuth pathway with ${platform}...` });
     
-    localStorage.setItem('creavie_user', JSON.stringify({
+    localStorage.setItem('creative_user', JSON.stringify({
       name: 'Alpha Explorer',
       email: `explorer@${platform.toLowerCase()}.com`,
       avatar: platform.slice(0, 1).toUpperCase()
