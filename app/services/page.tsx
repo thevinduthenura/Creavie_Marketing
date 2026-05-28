@@ -251,7 +251,7 @@ export default function Services() {
               }}
             >
               <div>
-                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '0.2rem' }}>{pkg.title}</h3>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.2rem' }}>{pkg.title}</h3>
                 <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>{pkg.subtitle}</span>
               </div>
               
@@ -262,7 +262,7 @@ export default function Services() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', flexGrow: 1 }}>
                 <div>
                   <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Crew</span>
-                  <span style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>{pkg.crew}</span>
+                  <span style={{ fontSize: '0.9rem', color: 'var(--text-dark)', fontWeight: 600 }}>{pkg.crew}</span>
                 </div>
 
                 <div>
@@ -290,7 +290,7 @@ export default function Services() {
               {pkg.addon && (
                 <div style={{ borderTop: 'var(--border-light)', paddingTop: '1.2rem', marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Optional Add-On</span>
-                  <span style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>{pkg.addon}</span>
+                  <span style={{ fontSize: '0.9rem', color: 'var(--text-dark)', fontWeight: 600 }}>{pkg.addon}</span>
                 </div>
               )}
             </div>
@@ -331,7 +331,7 @@ export default function Services() {
               key={idx}
               className={pkg.isElite ? "" : "white-card"}
               style={{
-                background: pkg.isElite ? '#000000' : 'var(--bg-white)',
+                background: pkg.isElite ? 'var(--bg-dark)' : 'var(--bg-white)',
                 border: pkg.isElite ? '2px solid var(--secondary)' : 'var(--border-light)',
                 borderRadius: '24px',
                 padding: '2.5rem',
@@ -345,7 +345,7 @@ export default function Services() {
               }}
             >
               <div>
-                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '0.2rem' }}>{pkg.title}</h3>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.2rem' }}>{pkg.title}</h3>
                 <span style={{ fontSize: '0.72rem', color: pkg.isElite ? 'var(--secondary)' : 'var(--text-muted)', fontWeight: 700, letterSpacing: '0.05em' }}>{pkg.subtitle}</span>
               </div>
               
@@ -356,7 +356,7 @@ export default function Services() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', flexGrow: 1 }}>
                 <div>
                   <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.3rem' }}>Crew</span>
-                  <span style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>{pkg.crew}</span>
+                  <span style={{ fontSize: '0.9rem', color: 'var(--text-dark)', fontWeight: 600 }}>{pkg.crew}</span>
                 </div>
 
                 <div>
@@ -386,7 +386,7 @@ export default function Services() {
 
         {/* Optional Add-Ons Table */}
         <div style={{
-          background: 'rgba(255, 255, 255, 0.02)',
+          background: 'var(--bg-white)',
           border: 'var(--border-light)',
           borderRadius: '24px',
           padding: '2.5rem',
@@ -394,7 +394,7 @@ export default function Services() {
           transform: loaded ? 'translateY(0)' : 'translateY(30px)',
           transition: 'all 1s cubic-bezier(0.16,1,0.3,1) 0.5s',
         }}>
-          <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.25rem', fontWeight: 800, color: '#fff', marginBottom: '1.5rem', textAlign: 'center', letterSpacing: '0.05em' }}>
+          <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', textAlign: 'center', letterSpacing: '0.05em' }}>
             OPTIONAL ADD-ONS
           </h3>
 
@@ -409,7 +409,7 @@ export default function Services() {
               </thead>
               <tbody>
                 <tr style={{ borderBottom: 'var(--border-light)' }}>
-                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: '#fff', fontWeight: 700 }}>Aerial (Drone) Coverage</td>
+                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 700 }}>Aerial (Drone) Coverage</td>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>LKR 25,000</td>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.88rem', color: 'var(--text-muted)' }}>Adds 20-30 mins of flight time for establishing shots. (Included in Premium Plus & Elite Packages).</td>
                 </tr>
