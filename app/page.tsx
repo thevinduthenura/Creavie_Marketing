@@ -219,7 +219,7 @@ export default function Home() {
               <div className="white-card avatar-stack-container">
                 <div className="avatar-stack">
                   {['#a3ff12', '#0c0c14', '#888', '#ddd', '#555'].map((bg, i) => (
-                    <div key={i} className="avatar-stack-circle" style={{ background: bg, color: bg === '#a3ff12' ? '#0c0c14' : bg === '#0c0c14' ? '#fff' : '#333' }}>
+                    <div key={i} className="avatar-stack-circle" style={{ background: bg, color: bg === '#a3ff12' ? '#0c0c14' : bg === '#0c0c14' ? 'var(--text-dark)' : '#333' }}>
                       {['A', 'B', 'C', 'D', '+'][i]}
                     </div>
                   ))}
@@ -229,14 +229,14 @@ export default function Home() {
                 </div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Client retention rate</div>
               </div>
-
+ 
               {/* HOW WE WORK video-style card */}
               <div className="video-how-work-card" style={{
                 backgroundImage: 'linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}>
-                <div className="video-overlay-text" style={{ color: '#fff' }}>HOW<br />WE WORK</div>
+                <div className="video-overlay-text" style={{ color: 'var(--text-dark)' }}>HOW<br />WE WORK</div>
                 <div className="play-circle-btn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--text-dark)">
                     <path d="M5 3l14 9-14 9V3z" />
@@ -323,7 +323,7 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                color: '#fff',
+                color: 'var(--text-dark)',
                 textDecoration: 'none',
                 transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                 cursor: 'pointer'
@@ -370,7 +370,7 @@ export default function Home() {
             {/* Left Column */}
             <div>
               <span className="section-label">Growth Simulator</span>
-              <h2 className="section-title" style={{ fontSize: 'clamp(2rem,4.5vw,2.8rem)', color: '#fff', marginBottom: '1.5rem' }}>
+              <h2 className="section-title" style={{ fontSize: 'clamp(2rem,4.5vw,2.8rem)', color: 'var(--text-dark)', marginBottom: '1.5rem' }}>
                 Calculate your<br />digital impact
               </h2>
               <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
@@ -453,7 +453,7 @@ export default function Home() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2rem', marginBottom: '2rem' }}>
                 <div>
                   <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Est. Impressions</span>
-                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-title)' }}>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-dark)', fontFamily: 'var(--font-title)' }}>
                     {(adSpend * 12).toLocaleString()}+
                   </div>
                 </div>
@@ -465,13 +465,13 @@ export default function Home() {
                 </div>
                 <div>
                   <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Projected Conversions</span>
-                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-title)' }}>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-dark)', fontFamily: 'var(--font-title)' }}>
                     {Math.round(adSpend * (campaignGoal === 'leads' ? 0.22 : campaignGoal === 'ecomm' ? 0.35 : 0.65)).toLocaleString()}
                   </div>
                 </div>
                 <div>
                   <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Projected Return</span>
-                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-title)' }}>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-dark)', fontFamily: 'var(--font-title)' }}>
                     ${(adSpend * (campaignGoal === 'leads' ? 4.8 : campaignGoal === 'ecomm' ? 5.4 : 6.2)).toLocaleString()}
                   </div>
                 </div>

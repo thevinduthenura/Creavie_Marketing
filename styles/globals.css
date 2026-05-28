@@ -175,17 +175,17 @@ a {
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: var(--text-dark);
 }
 
 .statement-premium span.fade {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(234, 229, 208, 0.35);
   font-weight: 400;
   transition: color 0.4s ease;
 }
 
 .statement-premium span.fade:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(234, 229, 208, 0.8);
 }
 
 /* Buttons */
@@ -371,7 +371,7 @@ a {
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.05em;
-  color: #ffffff;
+  color: var(--text-dark);
   margin-bottom: 1.6rem;
 }
 
@@ -635,7 +635,7 @@ a {
   height: 48px;
   border-radius: 50%;
   background: #ddd;
-  border: 3px solid #fff;
+  border: 3px solid var(--bg-dark);
   margin-left: -12px;
   display: flex;
   align-items: center;
