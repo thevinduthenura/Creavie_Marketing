@@ -8,12 +8,21 @@ interface ClientUser {
   name: string;
   email: string;
   avatar: string;
+  company?: string;
+  phone?: string;
 }
 
 export default function ClientPortal() {
   const router = useRouter();
   const [user, setUser] = useState<ClientUser | null>(null);
-  const [activeTab, setActiveTab] = useState<'overview' | 'deliverables' | 'support'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'deliverables' | 'support' | 'profile'>('overview');
+  
+  // Profile edit states
+  const [editName, setEditName] = useState('');
+  const [editEmail, setEditEmail] = useState('');
+  const [editCompany, setEditCompany] = useState('');
+  const [editPhone, setEditPhone] = useState('');
+  const [profileSuccess, setProfileSuccess] = useState(false);
   
   // Custom mock telemetry data
   const [metrics, setMetrics] = useState({
@@ -35,9 +44,41 @@ export default function ClientPortal() {
     if (!session) {
       router.push('/login');
     } else {
-      setUser(JSON.parse(session));
+      const parsedUser = JSON.parse(session);
+      setUser(parsedUser);
+      setEditName(parsedUser.name || '');
+      setEditEmail(parsedUser.email || '');
+      setEditCompany(parsedUser.company || 'Alpha Explorer Corp');
+      setEditPhone(parsedUser.phone || '+1 (555) 019-2834');
     }
   }, [router]);
+
+  const handleProfileUpdate = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editName || !editEmail) {
+      alert('Name and Email are required.');
+      return;
+    }
+    
+    const updatedUser = {
+      name: editName,
+      email: editEmail,
+      avatar: editName.slice(0, 2).toUpperCase(),
+      company: editCompany,
+      phone: editPhone
+    };
+    
+    localStorage.setItem('creative_user', JSON.stringify(updatedUser));
+    setUser(updatedUser);
+    
+    // Dispatch storage event so NavBar and other pages update instantly
+    window.dispatchEvent(new Event('storage'));
+    
+    setProfileSuccess(true);
+    setTimeout(() => {
+      setProfileSuccess(false);
+    }, 4000);
+  };
 
   const handleLogout = () => {
     localStorage.removeItem('creative_user');
@@ -128,8 +169,8 @@ export default function ClientPortal() {
         </div>
 
         {/* Tab Navigator */}
-        <div style={{ display: 'flex', gap: '0.8rem', marginBottom: '2rem' }}>
-          {(['overview', 'deliverables', 'support'] as const).map((tab) => (
+        <div style={{ display: 'flex', gap: '0.8rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+          {(['overview', 'deliverables', 'support', 'profile'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -421,6 +462,137 @@ export default function ClientPortal() {
                 }}
               >
                 Transmit Query
+              </button>
+            </form>
+          </div>
+        )}
+
+        {/* Tab 4: Profile Management */}
+        {activeTab === 'profile' && (
+          <div style={{ background: '#ffffff', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 8px 30px rgba(0,0,0,0.015)', border: '1px solid rgba(12,12,20,0.04)', maxWidth: '640px', margin: '0 auto' }}>
+            <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.8rem', textAlign: 'center' }}>
+              ✦ Manage User Profile
+            </h3>
+            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', textAlign: 'center', marginBottom: '2rem' }}>
+              Update your account credentials, contact coordinates, and corporate branding information.
+            </p>
+
+            {profileSuccess && (
+              <div style={{
+                background: 'rgba(144, 235, 0, 0.1)',
+                border: '1px solid var(--secondary)',
+                color: 'var(--bg-dark)',
+                padding: '1rem',
+                borderRadius: '12px',
+                textAlign: 'center',
+                fontWeight: 700,
+                fontSize: '0.9rem',
+                marginBottom: '1.5rem',
+              }}>
+                ✓ Profile Updated Securely! Changes synchronized instantly.
+              </div>
+            )}
+            
+            <form
+              onSubmit={handleProfileUpdate}
+              style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'var(--bg-dark)',
+                    color: 'var(--secondary)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.8rem',
+                    fontWeight: 800,
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                  }}>
+                    {editName ? editName.slice(0, 2).toUpperCase() : 'U'}
+                  </div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Avatar Badge</span>
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={editName}
+                    onChange={(e) => setEditName(e.target.value)}
+                    placeholder="Enter your name"
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                    Email Vector *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={editEmail}
+                    onChange={(e) => setEditEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                    Company / Organization
+                  </label>
+                  <input
+                    type="text"
+                    value={editCompany}
+                    onChange={(e) => setEditCompany(e.target.value)}
+                    placeholder="e.g., Alpha Explorer Corp"
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+                    Contact Phone Number
+                  </label>
+                  <input
+                    type="text"
+                    value={editPhone}
+                    onChange={(e) => setEditPhone(e.target.value)}
+                    placeholder="e.g., +1 (555) 019-2834"
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                style={{
+                  width: '100%',
+                  background: 'var(--bg-dark)',
+                  color: 'var(--text-light)',
+                  border: 'none',
+                  borderRadius: '14px',
+                  padding: '0.95rem',
+                  fontWeight: 700,
+                  fontSize: '0.95rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  marginTop: '0.5rem',
+                }}
+              >
+                Save Profile Changes
               </button>
             </form>
           </div>
