@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const locations = [
   { city: 'Dublin', country: 'Ireland', role: 'Head Office', flag: '🇮🇪', isHQ: true },
@@ -20,6 +21,7 @@ const articles = [
 export default function About() {
   const [loaded, setLoaded] = useState(false);
   const [counts, setCounts] = useState({ projects: 0, members: 0, countries: 0, satisfaction: 0 });
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setLoaded(true);
@@ -44,7 +46,7 @@ export default function About() {
       {/* HERO */}
       <div className="container" style={{ paddingTop: '4rem', paddingBottom: '6rem' }}>
         <div style={{
-          display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '5rem', alignItems: 'center',
+          display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.1fr 0.9fr', gap: isMobile ? '2.5rem' : '5rem', alignItems: 'center',
           opacity: loaded ? 1 : 0, transform: loaded ? 'translateY(0)' : 'translateY(30px)',
           transition: 'all 1s cubic-bezier(0.16,1,0.3,1)',
         }}>
@@ -65,7 +67,7 @@ export default function About() {
               <Link href="/team" className="btn-ghost"><span>View Careers</span></Link>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : '1fr 1fr', gap: '1.5rem' }}>
             {[
               { num: counts.projects.toLocaleString(), unit: '+', label: 'Projects Completed', accent: true },
               { num: counts.members, unit: '+', label: 'Global Professionals' },

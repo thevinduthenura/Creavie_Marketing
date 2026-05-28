@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const openings = [
   {
@@ -132,6 +133,7 @@ const leaderDeptColors: Record<string, string> = {
 
 export default function Team() {
   const [loaded, setLoaded] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => { setLoaded(true); }, []);
 
@@ -405,7 +407,7 @@ export default function Team() {
               </div>
 
               {/* Right: Location + CTA */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem', flexShrink: 0 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: isMobile ? 'flex-start' : 'flex-end', gap: '1rem', flexShrink: 0 }}>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>{job.flag}</div>
                   <div style={{ fontFamily: 'var(--font-title)', fontWeight: 600, fontSize: '0.88rem', color: 'var(--text-dark)' }}>{job.location}</div>

@@ -2,11 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useIsMobile } from './hooks/useIsMobile';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
   const [counts, setCounts] = useState({ projects: 0, retention: 0, brands: 0 });
   const [activeTab, setActiveTab] = useState('All Work');
+  const isMobile = useIsMobile();
 
   // ROI Estimator States
   const [adSpend, setAdSpend] = useState(5000);
@@ -372,7 +374,7 @@ export default function Home() {
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))', gap: isMobile ? '2.5rem' : '5rem', alignItems: 'center' }}>
             
             {/* Left Column */}
             <div>
@@ -457,7 +459,7 @@ export default function Home() {
               </div>
 
               {/* Outputs grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1.2rem' : '2rem', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '2rem', marginBottom: '2rem' }}>
                 <div>
                   <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.3rem' }}>Est. Impressions</span>
                   <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-dark)', fontFamily: 'var(--font-title)' }}>

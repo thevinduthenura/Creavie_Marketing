@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { IconMail, IconPhone, IconMapPin, IconSend, IconCheck } from '../components/Icons';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const serviceOptions = [
   'Select a Service or Package',
@@ -23,6 +24,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', scope: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setLoaded(true);
@@ -96,8 +98,8 @@ export default function Contact() {
       <div className="container" style={{ paddingBottom: '6rem' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '0.85fr 1.15fr',
-          gap: '3.5rem',
+          gridTemplateColumns: isMobile ? '1fr' : '0.85fr 1.15fr',
+          gap: isMobile ? '2rem' : '3.5rem',
           alignItems: 'start',
           opacity: loaded ? 1 : 0,
           transform: loaded ? 'translateY(0)' : 'translateY(30px)',
@@ -168,7 +170,7 @@ export default function Contact() {
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
               {/* Name + Email row */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '1.2rem' }}>
                 {['name', 'email'].map((field) => (
                   <div key={field} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                     <label style={{ fontSize: '0.78rem', fontFamily: 'var(--font-title)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)' }}>
