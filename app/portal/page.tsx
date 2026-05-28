@@ -88,30 +88,30 @@ export default function ClientPortal() {
 
   if (!user) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#ffffff' }}>
-        <div style={{ width: '30px', height: '30px', border: '3px solid rgba(12,12,20,0.1)', borderTopColor: 'var(--text-dark)', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-light)' }}>
+        <div style={{ width: '30px', height: '30px', border: '3px solid rgba(234, 229, 208, 0.1)', borderTopColor: 'var(--secondary)', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
       </div>
     );
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f6f6fa', paddingTop: '100px', paddingBottom: '5rem', fontFamily: 'var(--font-title), sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--bg-light)', paddingTop: '120px', paddingBottom: '5rem', fontFamily: 'var(--font-title), sans-serif' }}>
       <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
         
         {/* Portal Greeting Banner */}
         <div
           style={{
-            background: '#ffffff',
+            background: 'var(--bg-white)',
             borderRadius: '24px',
             padding: '2.5rem',
-            boxShadow: '0 8px 30px rgba(0,0,0,0.015)',
-            border: '1px solid rgba(12,12,20,0.04)',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)',
+            border: 'var(--border-light)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             flexWrap: 'wrap',
             gap: '1.5rem',
-            marginBottom: '2rem'
+            marginBottom: '2.5rem'
           }}
         >
           <div>
@@ -128,7 +128,8 @@ export default function ClientPortal() {
                   justifyContent: 'center',
                   fontSize: '1.1rem',
                   fontWeight: 800,
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                  border: '1px solid rgba(144, 235, 0, 0.2)'
                 }}
               >
                 {user.avatar}
@@ -138,7 +139,7 @@ export default function ClientPortal() {
               </h1>
             </div>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', margin: 0, paddingLeft: '3.6rem' }}>
-              Client ID: <code style={{ color: 'var(--text-dark)', fontWeight: 600 }}>CRV-{user.name.slice(0,3).toUpperCase()}-904</code> · Vector: {user.email}
+              Client ID: <code style={{ color: 'var(--secondary)', fontWeight: 600 }}>CRV-{user.name.slice(0,3).toUpperCase()}-904</code> · Vector: {user.email}
             </p>
           </div>
           
@@ -146,8 +147,8 @@ export default function ClientPortal() {
             onClick={handleLogout}
             style={{
               background: 'transparent',
-              color: '#dc2626',
-              border: '1px solid rgba(220, 38, 38, 0.15)',
+              color: '#f43f5e',
+              border: '1px solid rgba(244, 63, 94, 0.2)',
               padding: '0.7rem 1.4rem',
               borderRadius: '100px',
               fontWeight: 600,
@@ -156,12 +157,12 @@ export default function ClientPortal() {
               transition: 'all 0.3s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(220, 38, 38, 0.05)';
-              e.currentTarget.style.borderColor = '#dc2626';
+              e.currentTarget.style.background = 'rgba(244, 63, 94, 0.08)';
+              e.currentTarget.style.borderColor = '#f43f5e';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.borderColor = 'rgba(220, 38, 38, 0.15)';
+              e.currentTarget.style.borderColor = 'rgba(244, 63, 94, 0.2)';
             }}
           >
             Sign Out
@@ -169,15 +170,15 @@ export default function ClientPortal() {
         </div>
 
         {/* Tab Navigator */}
-        <div style={{ display: 'flex', gap: '0.8rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '0.8rem', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
           {(['overview', 'deliverables', 'support', 'profile'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               style={{
-                background: activeTab === tab ? 'var(--bg-dark)' : '#ffffff',
-                color: activeTab === tab ? 'var(--text-light)' : 'var(--text-muted)',
-                border: '1px solid rgba(12, 12, 20, 0.04)',
+                background: activeTab === tab ? 'var(--secondary)' : 'rgba(234, 229, 208, 0.02)',
+                color: activeTab === tab ? '#030303FF' : 'var(--text-muted)',
+                border: activeTab === tab ? '1px solid var(--secondary)' : '1px solid rgba(234, 229, 208, 0.08)',
                 padding: '0.75rem 1.6rem',
                 borderRadius: '100px',
                 fontWeight: 700,
@@ -185,7 +186,7 @@ export default function ClientPortal() {
                 cursor: 'pointer',
                 textTransform: 'capitalize',
                 transition: 'all 0.3s ease',
-                boxShadow: activeTab === tab ? '0 8px 20px rgba(12,12,20,0.1)' : 'none'
+                boxShadow: activeTab === tab ? '0 8px 20px var(--secondary-glow)' : 'none'
               }}
             >
               {tab}
@@ -202,49 +203,49 @@ export default function ClientPortal() {
             </h3>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
-              <div style={{ background: '#ffffff', border: '1px solid rgba(12,12,20,0.04)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.01)' }}>
+              <div style={{ background: 'var(--bg-white)', border: 'var(--border-light)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.2)' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Total Ad Resource Allocation
                 </span>
                 <h4 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--text-dark)', margin: '0.5rem 0' }}>
                   {metrics.adSpend}
                 </h4>
-                <div style={{ fontSize: '0.82rem', color: '#16a34a', fontWeight: 600 }}>Active Channels: Paid Search / Social</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--secondary)', fontWeight: 600 }}>Active Channels: Paid Search / Social</div>
               </div>
 
-              <div style={{ background: '#ffffff', border: '1px solid rgba(12,12,20,0.04)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.01)' }}>
+              <div style={{ background: 'var(--bg-white)', border: 'var(--border-light)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.2)' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Marketing ROI Telemetry
                 </span>
-                <h4 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--secondary)', margin: '0.5rem 0', textShadow: '0 0 10px rgba(144,235,0,0.1)' }}>
+                <h4 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--secondary)', margin: '0.5rem 0', textShadow: '0 0 15px var(--secondary-glow)' }}>
                   {metrics.roi}
                 </h4>
-                <div style={{ fontSize: '0.82rem', color: '#16a34a', fontWeight: 600 }}>Performance: Outstanding ✓</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--secondary)', fontWeight: 600 }}>Performance: Outstanding ✓</div>
               </div>
 
-              <div style={{ background: '#ffffff', border: '1px solid rgba(12,12,20,0.04)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.01)' }}>
+              <div style={{ background: 'var(--bg-white)', border: 'var(--border-light)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.2)' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   High-Impact Leads Generated
                 </span>
                 <h4 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--text-dark)', margin: '0.5rem 0' }}>
                   {metrics.leads}
                 </h4>
-                <div style={{ fontSize: '0.82rem', color: '#16a34a', fontWeight: 600 }}>CPA Target: Meta-optimized</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--secondary)', fontWeight: 600 }}>CPA Target: Meta-optimized</div>
               </div>
 
-              <div style={{ background: '#ffffff', border: '1px solid rgba(12,12,20,0.04)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.01)' }}>
+              <div style={{ background: 'var(--bg-white)', border: 'var(--border-light)', borderRadius: '20px', padding: '1.8rem', boxShadow: '0 8px 30px rgba(0,0,0,0.2)' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Impression Velocity
                 </span>
                 <h4 style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--text-dark)', margin: '0.5rem 0' }}>
                   {metrics.impressionGrowth}
                 </h4>
-                <div style={{ fontSize: '0.82rem', color: '#16a34a', fontWeight: 600 }}>Compared to last cycle</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--secondary)', fontWeight: 600 }}>Compared to last cycle</div>
               </div>
             </div>
 
             {/* Campaign Deliverables Board */}
-            <div style={{ background: '#ffffff', borderRadius: '24px', padding: '2rem', boxShadow: '0 10px 40px rgba(0,0,0,0.01)', border: '1px solid rgba(12,12,20,0.04)' }}>
+            <div style={{ background: 'var(--bg-white)', borderRadius: '24px', padding: '2rem', boxShadow: '0 10px 40px rgba(0,0,0,0.2)', border: 'var(--border-light)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-dark)', margin: 0 }}>
                   Active Brand Assets & Blueprints
@@ -254,7 +255,7 @@ export default function ClientPortal() {
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: 'var(--text-dark)',
+                    color: 'var(--secondary)',
                     fontWeight: 700,
                     fontSize: '0.88rem',
                     cursor: 'pointer',
@@ -275,14 +276,14 @@ export default function ClientPortal() {
                       alignItems: 'center',
                       padding: '1.2rem 1.5rem',
                       borderRadius: '16px',
-                      background: '#f6f6fa',
-                      border: '1px solid rgba(12,12,20,0.02)',
+                      background: 'rgba(234, 229, 208, 0.02)',
+                      border: '1px solid rgba(234, 229, 208, 0.06)',
                       flexWrap: 'wrap',
                       gap: '1rem'
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <div style={{ width: '40px', height: '40px', background: '#ffffff', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                      <div style={{ width: '40px', height: '40px', background: 'rgba(234, 229, 208, 0.05)', border: '1px solid rgba(234, 229, 208, 0.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                         {item.format}
                       </div>
                       <div>
@@ -298,9 +299,9 @@ export default function ClientPortal() {
                     <button
                       onClick={() => alert(`Initiating secure SSL transfer for ${item.title}...`)}
                       style={{
-                        background: 'var(--bg-dark)',
-                        color: 'var(--text-light)',
-                        border: 'none',
+                        background: 'transparent',
+                        color: 'var(--secondary)',
+                        border: '1px solid rgba(144, 235, 0, 0.3)',
                         padding: '0.6rem 1.2rem',
                         borderRadius: '50px',
                         fontSize: '0.82rem',
@@ -308,8 +309,14 @@ export default function ClientPortal() {
                         cursor: 'pointer',
                         transition: 'all 0.3s ease'
                       }}
-                      onMouseEnter={(e) => e.currentTarget.style.background = 'var(--secondary)'}
-                      onMouseLeave={(e) => e.currentTarget.style.background = 'var(--bg-dark)'}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'var(--secondary)';
+                        e.currentTarget.style.color = '#030303FF';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.color = 'var(--secondary)';
+                      }}
                     >
                       Download
                     </button>
@@ -322,7 +329,7 @@ export default function ClientPortal() {
 
         {/* Tab 2: Full Deliverables */}
         {activeTab === 'deliverables' && (
-          <div style={{ background: '#ffffff', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 8px 30px rgba(0,0,0,0.015)', border: '1px solid rgba(12,12,20,0.04)' }}>
+          <div style={{ background: 'var(--bg-white)', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', border: 'var(--border-light)' }}>
             <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem' }}>
               ✦ Full Client Brand Directory
             </h3>
@@ -337,14 +344,14 @@ export default function ClientPortal() {
                     alignItems: 'center',
                     padding: '1.4rem 1.8rem',
                     borderRadius: '16px',
-                    background: '#f6f6fa',
-                    border: '1px solid rgba(12,12,20,0.03)',
+                    background: 'rgba(234, 229, 208, 0.02)',
+                    border: '1px solid rgba(234, 229, 208, 0.06)',
                     flexWrap: 'wrap',
                     gap: '1rem'
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
-                    <div style={{ width: '45px', height: '45px', background: '#ffffff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.8rem', color: 'var(--text-muted)', border: '1px solid rgba(12,12,20,0.04)' }}>
+                    <div style={{ width: '45px', height: '45px', background: 'rgba(234, 229, 208, 0.05)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '0.8rem', color: 'var(--text-muted)', border: '1px solid rgba(234, 229, 208, 0.08)' }}>
                       {item.format}
                     </div>
                     <div>
@@ -358,10 +365,10 @@ export default function ClientPortal() {
                           style={{
                             fontSize: '0.75rem',
                             fontWeight: 700,
-                            padding: '0.1rem 0.6rem',
-                            borderRadius: '4px',
+                            padding: '0.15rem 0.6rem',
+                            borderRadius: '6px',
                             background: item.status === 'Completed' ? 'rgba(144, 235, 0, 0.15)' : 'rgba(245, 158, 11, 0.15)',
-                            color: item.status === 'Completed' ? '#3f6b00' : '#b45309'
+                            color: item.status === 'Completed' ? 'var(--secondary)' : '#f59e0b'
                           }}
                         >
                           {item.status}
@@ -379,9 +386,9 @@ export default function ClientPortal() {
                       }
                     }}
                     style={{
-                      background: item.status === 'Completed' ? 'var(--bg-dark)' : 'rgba(12,12,20,0.05)',
-                      color: item.status === 'Completed' ? 'var(--text-light)' : 'var(--text-muted)',
-                      border: 'none',
+                      background: item.status === 'Completed' ? 'transparent' : 'rgba(234, 229, 208, 0.02)',
+                      color: item.status === 'Completed' ? 'var(--secondary)' : 'var(--text-muted)',
+                      border: item.status === 'Completed' ? '1px solid rgba(144, 235, 0, 0.3)' : '1px solid rgba(234, 229, 208, 0.05)',
                       padding: '0.7rem 1.5rem',
                       borderRadius: '50px',
                       fontSize: '0.85rem',
@@ -390,10 +397,16 @@ export default function ClientPortal() {
                       transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => {
-                      if (item.status === 'Completed') e.currentTarget.style.background = 'var(--secondary)';
+                      if (item.status === 'Completed') {
+                        e.currentTarget.style.background = 'var(--secondary)';
+                        e.currentTarget.style.color = '#030303FF';
+                      }
                     }}
                     onMouseLeave={(e) => {
-                      if (item.status === 'Completed') e.currentTarget.style.background = 'var(--bg-dark)';
+                      if (item.status === 'Completed') {
+                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.color = 'var(--secondary)';
+                      }
                     }}
                   >
                     {item.status === 'Completed' ? 'Download' : 'Pending'}
@@ -406,7 +419,7 @@ export default function ClientPortal() {
 
         {/* Tab 3: Dedicated Support Link */}
         {activeTab === 'support' && (
-          <div style={{ background: '#ffffff', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 8px 30px rgba(0,0,0,0.015)', border: '1px solid rgba(12,12,20,0.04)', maxWidth: '640px', margin: '0 auto' }}>
+          <div style={{ background: 'var(--bg-white)', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', border: 'var(--border-light)', maxWidth: '640px', margin: '0 auto' }}>
             <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.8rem', textAlign: 'center' }}>
               ✦ Dispatch Account Strategy Vector
             </h3>
@@ -430,7 +443,7 @@ export default function ClientPortal() {
                   type="text"
                   required
                   placeholder="e.g., Requesting changes in Alpha Brand Pack color variations"
-                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', background: 'rgba(234, 229, 208, 0.02)', border: '1px solid rgba(234, 229, 208, 0.15)', color: 'var(--text-dark)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
                 />
               </div>
 
@@ -442,7 +455,7 @@ export default function ClientPortal() {
                   required
                   rows={4}
                   placeholder="Detail your request coordinates..."
-                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit', resize: 'vertical' }}
+                  style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', background: 'rgba(234, 229, 208, 0.02)', border: '1px solid rgba(234, 229, 208, 0.15)', color: 'var(--text-dark)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit', resize: 'vertical' }}
                 />
               </div>
 
@@ -450,15 +463,16 @@ export default function ClientPortal() {
                 type="submit"
                 style={{
                   width: '100%',
-                  background: 'var(--bg-dark)',
-                  color: 'var(--text-light)',
+                  background: 'var(--secondary)',
+                  color: '#030303FF',
                   border: 'none',
                   borderRadius: '14px',
                   padding: '0.95rem',
                   fontWeight: 700,
                   fontSize: '0.95rem',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 15px var(--secondary-glow)'
                 }}
               >
                 Transmit Query
@@ -469,7 +483,7 @@ export default function ClientPortal() {
 
         {/* Tab 4: Profile Management */}
         {activeTab === 'profile' && (
-          <div style={{ background: '#ffffff', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 8px 30px rgba(0,0,0,0.015)', border: '1px solid rgba(12,12,20,0.04)', maxWidth: '640px', margin: '0 auto' }}>
+          <div style={{ background: 'var(--bg-white)', borderRadius: '24px', padding: '2.5rem 2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', border: 'var(--border-light)', maxWidth: '640px', margin: '0 auto' }}>
             <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.8rem', textAlign: 'center' }}>
               ✦ Manage User Profile
             </h3>
@@ -479,9 +493,9 @@ export default function ClientPortal() {
 
             {profileSuccess && (
               <div style={{
-                background: 'rgba(144, 235, 0, 0.1)',
+                background: 'rgba(144, 235, 0, 0.08)',
                 border: '1px solid var(--secondary)',
-                color: 'var(--bg-dark)',
+                color: 'var(--secondary)',
                 padding: '1rem',
                 borderRadius: '12px',
                 textAlign: 'center',
@@ -510,7 +524,8 @@ export default function ClientPortal() {
                     justifyContent: 'center',
                     fontSize: '1.8rem',
                     fontWeight: 800,
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+                    border: '1px solid rgba(144, 235, 0, 0.2)'
                   }}>
                     {editName ? editName.slice(0, 2).toUpperCase() : 'U'}
                   </div>
@@ -529,7 +544,7 @@ export default function ClientPortal() {
                     value={editName}
                     onChange={(e) => setEditName(e.target.value)}
                     placeholder="Enter your name"
-                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', background: 'rgba(234, 229, 208, 0.02)', border: '1px solid rgba(234, 229, 208, 0.15)', color: 'var(--text-dark)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
                   />
                 </div>
 
@@ -543,7 +558,7 @@ export default function ClientPortal() {
                     value={editEmail}
                     onChange={(e) => setEditEmail(e.target.value)}
                     placeholder="Enter your email"
-                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', background: 'rgba(234, 229, 208, 0.02)', border: '1px solid rgba(234, 229, 208, 0.15)', color: 'var(--text-dark)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
                   />
                 </div>
               </div>
@@ -558,7 +573,7 @@ export default function ClientPortal() {
                     value={editCompany}
                     onChange={(e) => setEditCompany(e.target.value)}
                     placeholder="e.g., Alpha Explorer Corp"
-                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', background: 'rgba(234, 229, 208, 0.02)', border: '1px solid rgba(234, 229, 208, 0.15)', color: 'var(--text-dark)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
                   />
                 </div>
 
@@ -571,7 +586,7 @@ export default function ClientPortal() {
                     value={editPhone}
                     onChange={(e) => setEditPhone(e.target.value)}
                     placeholder="e.g., +1 (555) 019-2834"
-                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid rgba(12, 12, 20, 0.15)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
+                    style={{ width: '100%', padding: '0.85rem 1rem', borderRadius: '12px', background: 'rgba(234, 229, 208, 0.02)', border: '1px solid rgba(234, 229, 208, 0.15)', color: 'var(--text-dark)', fontSize: '0.95rem', outline: 'none', fontFamily: 'inherit' }}
                   />
                 </div>
               </div>
@@ -580,8 +595,8 @@ export default function ClientPortal() {
                 type="submit"
                 style={{
                   width: '100%',
-                  background: 'var(--bg-dark)',
-                  color: 'var(--text-light)',
+                  background: 'var(--secondary)',
+                  color: '#030303FF',
                   border: 'none',
                   borderRadius: '14px',
                   padding: '0.95rem',
@@ -590,6 +605,7 @@ export default function ClientPortal() {
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   marginTop: '0.5rem',
+                  boxShadow: '0 4px 15px var(--secondary-glow)'
                 }}
               >
                 Save Profile Changes
