@@ -1,24 +1,38 @@
 /* ═══ DESIGN SYSTEM & VARIABLES (NFORCE DARK MODE) ═══ */
 :root {
-  --bg-light: #080810;
-  --bg-white: #0e0e1a;
-  --bg-dark: #000000;
-  --bg-dark-card: #111120;
+  --bg-light: #0d0d12;
+  --bg-white: #14141f;
+  --bg-dark: #030303FF;
+  --bg-dark-card: #14141f;
 
-  --primary: #ffffff;
+  --primary: #EAE5D0FF;
   --secondary: #90eb00;
   --secondary-glow: rgba(144, 235, 0, 0.25);
 
-  --text-dark: #ffffff;
-  --text-muted: #8888aa;
-  --text-light: #ffffff;
+  --text-dark: #EAE5D0FF;
+  --text-muted: #a09fae;
+  --text-light: #EAE5D0FF;
 
   --font-title: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --border-light: 1px solid rgba(255, 255, 255, 0.07);
-  --border-dark: 1px solid rgba(255, 255, 255, 0.07);
+  --border-light: 1px solid rgba(234, 229, 208, 0.07);
+  --border-dark: 1px solid rgba(234, 229, 208, 0.07);
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Vintage Grain Overlay Effect */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* ═══ RESET & BASE STYLES ═══ */
@@ -29,7 +43,7 @@
 }
 
 html, body {
-  background-color: #080810;
+  background-color: var(--bg-light);
   color: var(--text-dark);
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -42,7 +56,7 @@ body::-webkit-scrollbar {
   width: 6px;
 }
 body::-webkit-scrollbar-track {
-  background: #080810;
+  background: var(--bg-light);
 }
 body::-webkit-scrollbar-thumb {
   background: rgba(144, 235, 0, 0.2);

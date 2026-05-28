@@ -39,6 +39,7 @@ export default function Footer() {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/services">Services</Link>
+            <Link href="/packages">Packages</Link>
             <Link href="/work">Work</Link>
             <Link href="/team">Team</Link>
             <Link href="/admin" style={{ color: 'var(--secondary)', fontWeight: 700 }}>Admin HQ</Link>
