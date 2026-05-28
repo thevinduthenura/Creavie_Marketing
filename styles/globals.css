@@ -573,8 +573,8 @@ a {
 .marquee-wrapper {
   overflow: hidden;
   background: #0e0e1a;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(234, 229, 208, 0.06);
+  border-bottom: 1px solid rgba(234, 229, 208, 0.06);
   padding: 2.2rem 0;
   position: relative;
   z-index: 2;
@@ -598,6 +598,15 @@ a {
 
 .marquee-track .mx {
   color: var(--secondary);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ═══ OUT OF THE BOX SERVICES BLOCK ═══ */
