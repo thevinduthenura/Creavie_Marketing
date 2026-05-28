@@ -10,7 +10,7 @@
   --secondary-glow: rgba(144, 235, 0, 0.25);
 
   --text-dark: #EAE5D0FF;
-  --text-muted: #a09fae;
+  --text-muted: rgba(234, 229, 208, 0.65);
   --text-light: #EAE5D0FF;
 
   --font-title: 'Inter', sans-serif;
@@ -461,7 +461,7 @@ a {
 
 .white-card {
   background: #0d0d18;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(234, 229, 208, 0.08);
   border-radius: 28px;
   padding: 2.2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
@@ -494,7 +494,7 @@ a {
 .semicircle-visual {
   height: 140px;
   background: radial-gradient(circle at 50% 100%, rgba(144, 235, 0, 0.15), rgba(17, 17, 32, 0.8));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(234, 229, 208, 0.08);
   border-bottom: none;
   border-radius: 140px 140px 0 0;
   position: relative;
