@@ -50,7 +50,7 @@ export default function Work() {
           <div className="portfolio-header-block" style={{ flexWrap: 'wrap', gap: '2rem' }}>
             <div>
               <span className="section-label">Our Work</span>
-              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.8rem', fontWeight: 700, color: '#fff' }}>
+              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-dark)' }}>
                 Filter by category
               </h3>
             </div>
@@ -76,10 +76,10 @@ export default function Work() {
                   <span className="circle-center-text">LIVE</span>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontWeight: 800, fontSize: '2.2rem', color: '#fff', lineHeight: 1 }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontWeight: 800, fontSize: '2.2rem', color: 'var(--text-dark)', lineHeight: 1 }}>
                     {filtered.length}
                   </div>
-                  <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'rgba(234, 229, 208, 0.4)', marginTop: '0.3rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                     Case{filtered.length !== 1 ? 's' : ''} shown
                   </div>
                 </div>
@@ -101,23 +101,23 @@ export default function Work() {
                   transition: `all 0.8s cubic-bezier(0.16,1,0.3,1) ${idx * 0.1}s`,
                   minHeight: '320px',
                   textDecoration: 'none',
-                  color: '#fff',
+                  color: 'var(--text-dark)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                 }}
               >
                 <div className="card-top-accent">
-                  <span style={{ background: 'var(--secondary)', color: 'var(--text-dark)', padding: '0.3rem 0.9rem', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, fontFamily: 'var(--font-title)' }}>
+                  <span style={{ background: 'var(--secondary)', color: '#030303FF', padding: '0.3rem 0.9rem', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700, fontFamily: 'var(--font-title)' }}>
                     {item.tag}
                   </span>
                 </div>
                 <div className="card-bottom-details">
-                  <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', marginBottom: '0.6rem', fontFamily: 'var(--font-title)', letterSpacing: '0.05em' }}>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(234, 229, 208, 0.3)', marginBottom: '0.6rem', fontFamily: 'var(--font-title)', letterSpacing: '0.05em' }}>
                     {item.year}
                   </div>
-                  <h3>{item.title}</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.6)' }}>{item.desc}</p>
+                  <h3 style={{ color: 'var(--text-dark)' }}>{item.title}</h3>
+                  <p style={{ color: 'rgba(234, 229, 208, 0.6)' }}>{item.desc}</p>
                 </div>
                 <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--secondary)', fontFamily: 'var(--font-title)', fontWeight: 600 }}>
                   View Case Study

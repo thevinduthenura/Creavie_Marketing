@@ -212,7 +212,7 @@ export default function CaseStudyPage() {
       <div className="container" style={{ paddingTop: '200px', textAlign: 'center', minHeight: '80vh' }}>
         <h1 style={{ fontFamily: 'var(--font-title)', fontSize: '2.5rem', fontWeight: 800 }}>Case Study Not Found</h1>
         <p style={{ color: 'var(--text-muted)', margin: '2rem 0' }}>The requested project details could not be found.</p>
-        <Link href="/work" style={{ display: 'inline-flex', background: 'var(--bg-dark)', color: '#fff', padding: '0.8rem 2rem', borderRadius: '100px', fontWeight: 600, fontFamily: 'var(--font-title)' }}>
+        <Link href="/work" style={{ display: 'inline-flex', background: 'var(--bg-dark)', color: 'var(--text-dark)', padding: '0.8rem 2rem', borderRadius: '100px', fontWeight: 600, fontFamily: 'var(--font-title)' }}>
           Back to Portfolio
         </Link>
       </div>
@@ -241,7 +241,7 @@ export default function CaseStudyPage() {
             <span style={{ background: 'var(--secondary)', color: 'var(--text-dark)', padding: '0.4rem 1.1rem', borderRadius: '100px', fontSize: '0.8rem', fontWeight: 700, fontFamily: 'var(--font-title)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               {study.tag}
             </span>
-            <span style={{ border: 'var(--border-light)', background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)', padding: '0.4rem 1.1rem', borderRadius: '100px', fontSize: '0.8rem', fontWeight: 600, fontFamily: 'var(--font-title)' }}>
+            <span style={{ border: 'var(--border-light)', background: 'rgba(234, 229, 208, 0.05)', color: 'var(--text-muted)', padding: '0.4rem 1.1rem', borderRadius: '100px', fontSize: '0.8rem', fontWeight: 600, fontFamily: 'var(--font-title)' }}>
               {study.year}
             </span>
           </div>
@@ -287,7 +287,7 @@ export default function CaseStudyPage() {
 
             {/* Immersive Quote Block */}
             <div style={{
-              background: 'rgba(255,255,255,0.02)',
+              background: 'rgba(234, 229, 208, 0.02)',
               borderLeft: '4px solid var(--secondary)',
               padding: '3rem',
               borderRadius: '0 24px 24px 0',
@@ -297,7 +297,7 @@ export default function CaseStudyPage() {
                 fontFamily: 'var(--font-title)',
                 fontSize: '1.3rem',
                 fontWeight: 600,
-                color: '#fff',
+                color: 'var(--text-dark)',
                 lineHeight: 1.6,
                 fontStyle: 'italic',
                 marginBottom: '1.5rem'
@@ -326,11 +326,11 @@ export default function CaseStudyPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }}>
                 <div>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-title)', fontWeight: 600, textTransform: 'uppercase' }}>Client</span>
-                  <div style={{ fontFamily: 'var(--font-title)', fontWeight: 700, fontSize: '1.1rem', marginTop: '0.2rem', color: '#fff' }}>{study.client}</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontWeight: 700, fontSize: '1.1rem', marginTop: '0.2rem', color: 'var(--text-dark)' }}>{study.client}</div>
                 </div>
                 <div>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-title)', fontWeight: 600, textTransform: 'uppercase' }}>Agency Partners</span>
-                  <div style={{ fontFamily: 'var(--font-title)', fontWeight: 700, fontSize: '1.1rem', marginTop: '0.2rem', color: '#fff' }}>{study.agency}</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontWeight: 700, fontSize: '1.1rem', marginTop: '0.2rem', color: 'var(--text-dark)' }}>{study.agency}</div>
                 </div>
                 <div>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-title)', fontWeight: 600, textTransform: 'uppercase' }}>Integrated Disciplines</span>
@@ -350,9 +350,9 @@ export default function CaseStudyPage() {
               <div style={{ fontSize: '0.78rem', fontFamily: 'var(--font-title)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--secondary)', marginBottom: '2.2rem' }}>Measured KPIs</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2.2rem' }}>
                 {study.metrics.map((metric, i) => (
-                  <div key={i} style={{ borderBottom: i < study.metrics.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none', paddingBottom: i < study.metrics.length - 1 ? '1.8rem' : '0' }}>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.5rem', fontWeight: 800, color: '#fff', lineHeight: 1 }}>{metric.value}</div>
-                    <div style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.5rem', fontFamily: 'var(--font-title)', fontWeight: 500 }}>{metric.label}</div>
+                  <div key={i} style={{ borderBottom: i < study.metrics.length - 1 ? '1px solid rgba(234, 229, 208, 0.06)' : 'none', paddingBottom: i < study.metrics.length - 1 ? '1.8rem' : '0' }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.5rem', fontWeight: 800, color: 'var(--text-dark)', lineHeight: 1 }}>{metric.value}</div>
+                    <div style={{ fontSize: '0.88rem', color: 'rgba(234, 229, 208, 0.5)', marginTop: '0.5rem', fontFamily: 'var(--font-title)', fontWeight: 500 }}>{metric.label}</div>
                   </div>
                 ))}
               </div>
@@ -395,7 +395,7 @@ export default function CaseStudyPage() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
             <div>
               <span className="section-label" style={{ marginBottom: '0.8rem' }}>Up Next</span>
-              <h3 style={{ fontFamily: 'var(--font-title)', fontWeight: 800, fontSize: 'clamp(1.5rem,3vw,2.4rem)', color: '#fff' }}>{nextStudy.title}</h3>
+              <h3 style={{ fontFamily: 'var(--font-title)', fontWeight: 800, fontSize: 'clamp(1.5rem,3vw,2.4rem)', color: 'var(--text-dark)' }}>{nextStudy.title}</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '0.3rem' }}>{nextStudy.category}</p>
             </div>
             <Link href={`/work/${nextSlug}`} className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}>
