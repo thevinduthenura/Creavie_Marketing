@@ -203,34 +203,34 @@ export default function Services() {
             {
               title: 'Brand Identity Starter',
               subtitle: 'BUDGET',
-              price: 'LKR 45,000',
+              price: '$199',
               crew: '1 Brand Strategist + 1 Graphic Designer',
               preproduction: ['1-Hour brand positioning consultation.', 'Target audience mapping.'],
               production: ['Full Visual Brand Identity Book.', '6 Custom Social Media Templates (Figma).', 'Business card & stationery mockups.'],
               postproduction: ['All source files (SVG, PDF, Figma).', '1 Round of premium brand revisions.'],
-              addon: 'Add Landing Page for +LKR 25,000',
+              addon: 'Add Landing Page for +$120',
               isElite: false
             },
             {
               title: 'Growth Engine Standard',
               subtitle: 'STANDARD',
-              price: 'LKR 85,000',
+              price: '$399',
               crew: '1 UI/UX Designer + 1 Developer + 1 Copywriter',
               preproduction: ['Competitive UX benchmarking.', 'Conversion rate optimization roadmap.'],
               production: ['Custom 5-Page Responsive React Website.', 'High-conversion copy designed for sales.', 'Lead capture & contact forms.'],
               postproduction: ['SEO optimization (Google Search Console).', '30-Day post-launch maintenance SLA.'],
-              addon: 'Add Custom CMS / Blog for +LKR 25,000',
+              addon: 'Add Custom CMS / Blog for +$120',
               isElite: false
             },
             {
               title: 'Ultimate Digital Presence',
               subtitle: 'PREMIUM',
-              price: 'LKR 165,000',
+              price: '$799',
               crew: '1 Tech Lead + 2 Senior Devs + 1 Creative Director',
               preproduction: ['Deep-dive technical system mapping.', 'High-fidelity Figma user testing.'],
               production: ['Custom Web Application or Shopify Store.', 'Secure client/admin billing portal.', 'Dynamic API & inventory integration.'],
               postproduction: ['Full technical SEO & page speed acceleration.', '2 Months dedicated developer support.'],
-              addon: 'Add Mobile Companion for +LKR 120,000',
+              addon: 'Add Mobile Companion for +$599',
               isElite: false
             }
           ].map((pkg, idx) => (
@@ -309,7 +309,7 @@ export default function Services() {
             {
               title: 'Elite Omnichannel Scale',
               subtitle: 'PREMIUM PLUS',
-              price: 'LKR 280,000',
+              price: '$1,399',
               crew: 'Dedicated Growth Team (5 Specialists)',
               preproduction: ['12-Month digital growth blueprint.', 'Conversion tracking & pixel architecture design.'],
               production: ['Complete platform visual redesign.', 'High-performance social ad creatives.', 'A/B testing campaign setup.'],
@@ -319,7 +319,7 @@ export default function Services() {
             {
               title: 'Creative Domination Elite',
               subtitle: 'ELITE - OMNICHANNEL SUITE',
-              price: 'LKR 450,000',
+              price: '$2,499',
               crew: 'Full Agency Director Team (Account, Tech, Creative, Ads leads)',
               preproduction: ['Deep market analysis & competitor teardowns.', 'Premium custom storyboard planning.'],
               production: ['Enterprise headless CMS web infrastructure.', 'Cinematic video commercial production.', 'Unlimited custom ad creatives designed monthly.'],
@@ -410,17 +410,17 @@ export default function Services() {
               <tbody>
                 <tr style={{ borderBottom: 'var(--border-light)' }}>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 700 }}>Professional SEO Campaign Boost</td>
-                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>LKR 35,000</td>
+                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>$199</td>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.88rem', color: 'var(--text-muted)' }}>Extensive keyword research, high-quality backlink building, and 3 months of monthly content optimization.</td>
                 </tr>
                 <tr style={{ borderBottom: 'var(--border-light)' }}>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 700 }}>Social Media Domination Pack</td>
-                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>LKR 45,000</td>
+                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>$249</td>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.88rem', color: 'var(--text-muted)' }}>15 custom designed Instagram/LinkedIn feed posts + 5 dynamic transition reels built by our creative design team.</td>
                 </tr>
                 <tr style={{ borderBottom: 'var(--border-light)' }}>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 700 }}>High-Performance Paid Ads Setup</td>
-                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>LKR 50,000</td>
+                  <td style={{ padding: '1.2rem 1rem', fontSize: '0.92rem', color: 'var(--secondary)', fontWeight: 700 }}>$299</td>
                   <td style={{ padding: '1.2rem 1rem', fontSize: '0.88rem', color: 'var(--text-muted)' }}>Pixel & Conversion API setup, audience cold-targeting mapping, and copy creation for Meta and Google Ads.</td>
                 </tr>
               </tbody>
