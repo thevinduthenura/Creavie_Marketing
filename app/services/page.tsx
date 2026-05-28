@@ -293,6 +293,23 @@ export default function Services() {
                   <span style={{ fontSize: '0.9rem', color: 'var(--text-dark)', fontWeight: 600 }}>{pkg.addon}</span>
                 </div>
               )}
+
+              <Link 
+                href={`/contact?package=${encodeURIComponent(pkg.title)}`}
+                className="btn-primary" 
+                style={{ 
+                  marginTop: '1.5rem', 
+                  width: '100%', 
+                  justifyContent: 'center',
+                  background: 'rgba(234, 229, 208, 0.03)',
+                  color: 'var(--text-dark)',
+                  border: '1px solid rgba(234, 229, 208, 0.1)',
+                  boxShadow: 'none'
+                }}
+              >
+                <span>Select Plan</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </Link>
             </div>
           ))}
         </div>
@@ -380,6 +397,23 @@ export default function Services() {
                   </ul>
                 </div>
               </div>
+
+              <Link 
+                href={`/contact?package=${encodeURIComponent(pkg.title)}`}
+                className="btn-primary" 
+                style={{ 
+                  marginTop: '1.5rem', 
+                  width: '100%', 
+                  justifyContent: 'center',
+                  background: pkg.isElite ? 'var(--secondary)' : 'rgba(234, 229, 208, 0.03)',
+                  color: pkg.isElite ? '#000000' : 'var(--text-dark)',
+                  border: pkg.isElite ? 'none' : '1px solid rgba(234, 229, 208, 0.1)',
+                  boxShadow: pkg.isElite ? '0 8px 25px var(--secondary-glow)' : 'none'
+                }}
+              >
+                <span>Select Plan</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              </Link>
             </div>
           ))}
         </div>

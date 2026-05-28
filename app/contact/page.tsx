@@ -3,13 +3,42 @@
 import React, { useEffect, useState } from 'react';
 import { IconMail, IconPhone, IconMapPin, IconSend, IconCheck } from '../components/Icons';
 
+const serviceOptions = [
+  'Select a Service or Package',
+  'Brand Identity Starter ($135)',
+  'Growth Engine Standard ($259)',
+  'Ultimate Digital Presence ($499)',
+  'Elite Omnichannel Scale ($849)',
+  'Creative Domination Elite ($1,359)',
+  'Brand Strategy',
+  'UI/UX Design',
+  'Web Development',
+  'Motion Design',
+  'Digital Campaign',
+  'Other',
+];
+
 export default function Contact() {
   const [loaded, setLoaded] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', scope: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => { setLoaded(true); }, []);
+  useEffect(() => {
+    setLoaded(true);
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const pkg = params.get('package');
+      if (pkg) {
+        const matchedOption = serviceOptions.find(opt => opt.toLowerCase().includes(pkg.toLowerCase()));
+        if (matchedOption) {
+          setFormData(prev => ({ ...prev, scope: matchedOption }));
+        } else {
+          setFormData(prev => ({ ...prev, scope: pkg }));
+        }
+      }
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,16 +69,6 @@ export default function Contact() {
     { label: 'Email Us', value: 'info@creativemarketingtm.com', href: 'mailto:info@creativemarketingtm.com', icon: <IconMail size={20} color="var(--secondary)" strokeWidth={1.8} /> },
     { label: 'Head Office', value: 'Dublin, Ireland', href: '#', icon: <IconMapPin size={20} color="var(--secondary)" strokeWidth={1.8} /> },
     { label: 'Global Offices', value: 'CA · AU · US · NZ', href: '/about', icon: <IconPhone size={20} color="var(--secondary)" strokeWidth={1.8} /> },
-  ];
-
-  const serviceOptions = [
-    'Select a Service',
-    'Brand Strategy',
-    'UI/UX Design',
-    'Web Development',
-    'Motion Design',
-    'Digital Campaign',
-    'Other',
   ];
 
   return (
@@ -191,7 +210,7 @@ export default function Contact() {
                     outline: 'none', cursor: 'pointer', appearance: 'none',
                   }}
                 >
-                  {serviceOptions.map(o => <option key={o} value={o === 'Select a Service' ? '' : o}>{o}</option>)}
+                  {serviceOptions.map(o => <option key={o} value={o === 'Select a Service or Package' ? '' : o}>{o}</option>)}
                 </select>
               </div>
 
