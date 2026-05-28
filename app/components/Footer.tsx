@@ -55,7 +55,7 @@ export default function Footer() {
 
           <div className="footer-contact-info">
             <h4>Contact</h4>
-            <a href="mailto:hello@creativemarketingtm.com">hello@creativemarketingtm.com</a>
+            <a href="mailto:info@creativemarketingtm.com">info@creativemarketingtm.com</a>
             <p className="footer-addr" style={{ marginTop: '0.8rem' }}>
               <strong>Head Office</strong><br />
               Dublin, Ireland

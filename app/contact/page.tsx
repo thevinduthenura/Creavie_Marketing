@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { label: 'Email Us', value: 'hello@creativemarketingtm.com', href: 'mailto:hello@creativemarketingtm.com', icon: <IconMail size={20} color="var(--secondary)" strokeWidth={1.8} /> },
+    { label: 'Email Us', value: 'info@creativemarketingtm.com', href: 'mailto:info@creativemarketingtm.com', icon: <IconMail size={20} color="var(--secondary)" strokeWidth={1.8} /> },
     { label: 'Head Office', value: 'Dublin, Ireland', href: '#', icon: <IconMapPin size={20} color="var(--secondary)" strokeWidth={1.8} /> },
     { label: 'Global Offices', value: 'CA · AU · US · NZ', href: '/about', icon: <IconPhone size={20} color="var(--secondary)" strokeWidth={1.8} /> },
   ];
@@ -256,7 +256,7 @@ export default function Contact() {
             { dept: 'Gerald', role: 'Executive & Partnerships', email: 'gerald@creativemarketingtm.com' },
             { dept: 'Legal Desk', role: 'Compliance & Contracts', email: 'legal@creativemarketingtm.com' },
             { dept: 'HR & Careers', role: 'Recruitment & Culture', email: 'hr@creativemarketingtm.com' },
-            { dept: 'Shaki', role: 'Creative Director', email: 'shaki@creativemarketingtm.com' },
+            { dept: 'Shakya', role: 'Creative Director', email: 'shakya@creativemarketingtm.com' },
             { dept: 'General Desk', role: 'Info & Global Press', email: 'info@creativemarketingtm.com' },
           ].map((item, idx) => (
             <div
