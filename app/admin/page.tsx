@@ -102,7 +102,7 @@ export default function AdminDashboard() {
         {/* Header Title Block */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem', flexWrap: 'wrap', gap: '1.5rem', opacity: loaded ? 1 : 0, transform: loaded ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease' }}>
           <div>
-            <span style={{ color: 'var(--secondary)', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.8rem', fontWeight: 800 }}>Creavie HQ Control Hub</span>
+            <span style={{ color: 'var(--secondary)', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.8rem', fontWeight: 800 }}>Creative HQ Control Hub</span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: '2.5rem', fontWeight: 800, marginTop: '0.3rem', color: '#fff' }}>Admin Dashboard</h1>
           </div>
           

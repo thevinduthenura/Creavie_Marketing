@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       message: 'Launch payload received securely. Orbit sequence initialized ✦',
       transmissionDetails: {
         receivedAt: new Date().toISOString(),
-        missionCode: `CREAVIE-${Math.floor(Math.random() * 90000 + 10000)}`,
+        missionCode: `CREATIVE-${Math.floor(Math.random() * 90000 + 10000)}`,
         dataStream: { name, email, scope, message }
       }
     }, { status: 200 });
