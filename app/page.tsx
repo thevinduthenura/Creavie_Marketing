@@ -120,13 +120,20 @@ export default function Home() {
                 transition: 'all 1s cubic-bezier(0.16,1,0.3,1) 0.7s',
               }}
             >
-              <span className="trusted-label">Trusted by the world&apos;s biggest brands</span>
+              <span className="trusted-label">Trusted by the world&apos;s leading brand ecosystems</span>
               <div className="hero-client-logos">
-                <span>NovaSphere</span>
-                <span>Luxen</span>
-                <span>OrbitFx</span>
-                <span>PulseAI</span>
-                <span>Vertex</span>
+                {[
+                  { name: 'NovaSphere', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
+                  { name: 'Luxen', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 22H22L12 2Z" /></svg> },
+                  { name: 'OrbitFx', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 12L12 22L22 12L12 2Z" /></svg> },
+                  { name: 'PulseAI', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg> },
+                  { name: 'Vertex', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7L12 12L22 7L12 2Z M2 17L12 22L22 17" /></svg> }
+                ].map((logo, i) => (
+                  <span key={i}>
+                    {logo.icon}
+                    {logo.name}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
