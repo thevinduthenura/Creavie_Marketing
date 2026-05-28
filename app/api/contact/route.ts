@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
@@ -29,19 +30,6 @@ export async function POST(request: Request) {
       }, { status: 200 });
     }
 
-    // Dynamically load nodemailer to bypass local compile errors if not installed
-    let nodemailer;
-    try {
-      nodemailer = eval("require('nodemailer')");
-    } catch (e) {
-      console.error('❌ Nodemailer is not installed in the local environment:', e);
-      return NextResponse.json({
-        status: 'Failed',
-        error: 'Nodemailer is not installed locally.',
-        details: 'Run npm install in a standard network environment to download nodemailer.'
-      }, { status: 500 });
-    }
-
     // Configure Zoho SMTP Transport
     const transporter = nodemailer.createTransport({
       host: 'smtp.zoho.com',
@@ -51,6 +39,9 @@ export async function POST(request: Request) {
         user: emailUser,
         pass: emailPass,
       },
+      tls: {
+        rejectUnauthorized: false // Avoid SSL handshake blocks from certain server hosts
+      }
     });
 
     const mailOptions = {
